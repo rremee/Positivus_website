@@ -1,0 +1,49 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+@mixin button(
+    $border: none, 
+    $borderHover: none, 
+    $bColor: $darkColor, 
+    $color: $blackColor,
+    $bColorHover: $darkColor, 
+    $colorHover: $blackColor,
+    $bColorFocus: $darkColorFocus,
+    $borderFocus: none,
+    $disableBgColor: $disableColorButton,
+    $disableTextColor: $disableColorButtonText,
+    $disableBorder: none) {
+	border-radius: rem(14);
+	padding: rem(20) rem(35);
+	background-color: $bColor;
+	font-weight: 400;
+	font-size: rem(20);
+	line-height: 1.4;
+	text-align: center;
+	color: $color;
+	border: $border;
+	cursor: pointer;
+	transition: 0.4s all;
+    &:focus {
+        outline: none;
+        background-color: $bColorFocus;
+        border: $borderFocus;
+    }
+    &:active {
+        background-color: $bColorFocus;
+        transform: scale(0.92);
+    }
+    &:disabled {
+        background-color: $disableBgColor;
+        color: $disableTextColor;
+        border: $disableBorder;
+        cursor: not-allowed;
+    }
+    @media screen and (min-width: $tablet) {
+		&:hover {
+			background-color: $bColorHover;
+            color: $colorHover;
+            border: $borderHover;
+		}
+	}
+}

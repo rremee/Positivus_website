@@ -1,0 +1,29 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.button-dark {
+	@include button(
+		$color: $whiteColor,
+		$bColorHover: $darkColorHover,
+		$colorHover: $whiteColor
+	);
+}
+.button-green {
+	@include button(
+		$bColor: $greenColor,
+		$bColorHover: $greenColorHover,
+		$bColorFocus: $greenColorFocus
+	);
+}
+.button-outline {
+	@include button(
+		$bColor: transparent,
+		$border: rem(1) solid $darkColor,
+		$bColorHover: $darkColorHover,
+		$colorHover: $whiteColor,
+		$borderHover: rem(1) solid $darkColorHover,
+		$bColorFocus: transparent,
+		$borderFocus: $borderFocusButton
+	);
+}

@@ -6,8 +6,15 @@ $fontSize: rem(18);
 
 // Colors
 $greenColor: #B9FF66;
+$greenColorHover: #91f319;
+$greenColorFocus: #8dff02;
 $blackColor: #000;
 $darkColor: #191A23;
+$darkColorHover: #303038;
+$darkColorFocus: #464649;
+$borderFocusButton: rem(1) dotted $darkColorFocus;
+$disableColorButton: #EAEAEA;
+$disableColorButtonText: #9B9B9B;
 $grayColor: #F3F3F3;
 $whiteColor: #fff;
 
