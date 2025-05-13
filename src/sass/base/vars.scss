@@ -1,0 +1,20 @@
+@use "../libs/pxtorem.scss" as *;
+
+// Font
+$fontFamily: "Space Grotesk", sans-serif;
+$fontSize: rem(18);
+
+// Colors
+$greenColor: #B9FF66;
+$blackColor: #000;
+$darkColor: #191A23;
+$grayColor: #F3F3F3;
+$whiteColor: #fff;
+
+// Breakpoints
+$laptopL: rem(1439.98);
+$laptop: rem(1023.98);
+$tablet: rem(767.98);
+$mobileL: rem(424.98);
+$mobileM: rem(374.98);
+$mobileS: rem(319.98);
