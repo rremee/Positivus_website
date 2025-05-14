@@ -1,0 +1,125 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+@use "../animation/animations.scss" as *;
+
+.header {
+	&__container {
+		padding-top: rem(30);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		column-gap: rem(30);
+		row-gap: rem(20);
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		column-gap: rem(13);
+		font-weight: 500;
+		font-size: clamp(rem(24), 8vw, rem(40));
+		z-index: 200;
+		position: relative;
+		img {
+			animation: logoImgAnimation 8s linear infinite;
+		}
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				img {
+					animation-duration: 2s;
+				}
+			}
+		}
+	}
+}
+
+.burger {
+	display: none;
+}
+
+.menu {
+	&__list {
+		display: flex;
+		align-items: center;
+		row-gap: rem(18);
+		column-gap: clamp(rem(14), 4vw, rem(40));
+		flex-wrap: wrap;
+	}
+
+	&__link {
+		font-weight: 400;
+		font-size: clamp(rem(18), 3vw, rem(20));
+		line-height: 1.4;
+		@include hoverLink;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.burger {
+		height: rem(24);
+		width: rem(30);
+		position: relative;
+		z-index: 100;
+		display: block;
+		transition: 0.5s all;
+		span {
+			display: block;
+			width: 100%;
+			height: rem(3.2);
+			position: absolute;
+			background-color: $darkColor;
+			transition: 0.5s all;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			&:nth-child(1) {
+				transform: translate(-50%, calc(-50% + rem(7)));
+			}
+			&:nth-child(2) {
+				transform: translate(-50%, calc(-50% - rem(7)));
+			}
+		}
+		&-close {
+			width: rem(28);
+			span {
+				&:nth-child(1) {
+					transform: translate(-50%, calc(-50% + rem(-2))) rotate(-45deg);
+				}
+				&:nth-child(2) {
+					transform: translate(-50%, calc(-50% - rem(2))) rotate(45deg);
+				}
+				&:nth-child(3) {
+					width: 0%;
+				}
+			}
+		}
+	}
+	.menu {
+		position: fixed;
+		top: 0;
+		width: 100dvw;
+		height: 100dvh;
+		background-color: $whiteColor;
+		padding: rem(150) rem(15);
+		opacity: 0;
+		flex-direction: column;
+		transition: 0.4s all;
+		right: -100dvw;
+		pointer-events: none;
+		z-index: 100;
+		&__list {
+			flex-direction: column;
+			row-gap: clamp(rem(24), 3vw, rem(32));
+		}
+		&__link {
+			font-size: clamp(rem(20), 4vw, rem(24));
+		}
+		&--active {
+			right: 0;
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+}
