@@ -1,0 +1,22 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.text-block {
+	display: flex;
+	align-items: center;
+	gap: clamp(rem(24), 6vw, rem(47));
+	@media screen and (max-width: $tabletS) {
+		flex-direction: column;
+		text-align: center;
+	}
+	&__title {
+		@include textHeading-2;
+		@include headingBack;
+	}
+
+	&__paragraph {
+		@include textParagraph;
+		max-width: clamp(rem(380), 40vw, rem(580));
+	}
+}

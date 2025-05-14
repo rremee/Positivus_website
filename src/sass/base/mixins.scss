@@ -1,18 +1,21 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
 
+// Button
+
 @mixin button(
-    $border: none, 
-    $borderHover: none, 
-    $bColor: $darkColor, 
-    $color: $blackColor,
-    $bColorHover: $darkColor, 
-    $colorHover: $blackColor,
-    $bColorFocus: $darkColorFocus,
-    $borderFocus: none,
-    $disableBgColor: $disableColorButton,
-    $disableTextColor: $disableColorButtonText,
-    $disableBorder: none) {
+	$border: none,
+	$borderHover: none,
+	$bColor: $darkColor,
+	$color: $blackColor,
+	$bColorHover: $darkColor,
+	$colorHover: $blackColor,
+	$bColorFocus: $darkColorFocus,
+	$borderFocus: none,
+	$disableBgColor: $disableColorButton,
+	$disableTextColor: $disableColorButtonText,
+	$disableBorder: none
+) {
 	border-radius: rem(14);
 	padding: rem(20) rem(35);
 	background-color: $bColor;
@@ -24,26 +27,54 @@
 	border: $border;
 	cursor: pointer;
 	transition: 0.4s all;
-    &:focus {
-        outline: none;
-        background-color: $bColorFocus;
-        border: $borderFocus;
-    }
-    &:active {
-        background-color: $bColorFocus;
-        transform: scale(0.92);
-    }
-    &:disabled {
-        background-color: $disableBgColor;
-        color: $disableTextColor;
-        border: $disableBorder;
-        cursor: not-allowed;
-    }
-    @media screen and (min-width: $tablet) {
+	&:focus {
+		outline: none;
+		background-color: $bColorFocus;
+		border: $borderFocus;
+	}
+	&:active {
+		background-color: $bColorFocus;
+		transform: scale(0.92);
+	}
+	&:disabled {
+		background-color: $disableBgColor;
+		color: $disableTextColor;
+		border: $disableBorder;
+		cursor: not-allowed;
+	}
+	@media screen and (min-width: $tablet) {
 		&:hover {
 			background-color: $bColorHover;
-            color: $colorHover;
-            border: $borderHover;
+			color: $colorHover;
+			border: $borderHover;
 		}
+	}
+}
+
+// Typography
+
+@mixin textHeading-2 {
+	font-weight: 500;
+	font-size: clamp(rem(36), 4vw, rem(40));
+}
+
+@mixin textParagraph {
+	font-weight: 400;
+	font-size: clamp(rem(16), 4vw, rem(18));
+}
+
+@mixin headingBack($BGColor: $greenColor) {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 110%;
+		height: 110%;
+		background-color: $BGColor;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: rem(7);
+		z-index: -1;
 	}
 }
