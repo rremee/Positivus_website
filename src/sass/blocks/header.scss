@@ -25,13 +25,6 @@
 		img {
 			animation: logoImgAnimation 8s linear infinite;
 		}
-		@media screen and (min-width: $tablet) {
-			&:hover {
-				img {
-					animation-duration: 2s;
-				}
-			}
-		}
 	}
 }
 
