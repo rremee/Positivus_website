@@ -1,0 +1,42 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+@use "../animation/animations.scss" as *;
+
+.hero {
+	padding: clamp(rem(40), 12vw, rem(70)) 0;
+	&__container {
+		display: flex;
+		align-items: center;
+		column-gap: clamp(rem(40), 5vw, rem(108));
+		row-gap: clamp(rem(40), 6vw, rem(80));
+		justify-content: space-between;
+		@media screen and (max-width: $tablet) {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__content {
+		flex: 0 0 clamp(43%, 48vw, 50%);
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(24), 4vw, rem(30));
+		max-width: clamp(rem(300), 84vw, rem(531));
+		@media screen and (max-width: rem(659.98)) {
+			.button-dark {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+	}
+
+	&__picture {
+		flex: 0 0 clamp(48.6%, 48vw, 50%);
+		@media screen and (min-width: $tablet) {
+			> svg {
+				transform: translateX(calc(-1 * clamp(1rem, 3vw, 2rem))) !important;
+			}
+		}
+	}
+}

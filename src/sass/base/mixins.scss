@@ -27,6 +27,7 @@
 	border: $border;
 	cursor: pointer;
 	transition: 0.4s all;
+	max-width: clamp(rem(250), 40vw, rem(264));
 	&:focus {
 		outline: none;
 		background-color: $bColorFocus;
@@ -53,14 +54,16 @@
 
 // Typography
 
-@mixin textHeading-2 {
-	font-weight: 500;
-	font-size: clamp(rem(36), 4vw, rem(40));
-}
-
-@mixin textParagraph {
-	font-weight: 400;
-	font-size: clamp(rem(16), 4vw, rem(18));
+@mixin typography(
+	$weight: 400,
+	$minFS: 16,
+	$maxFS: 18,
+	$vw: 5vw,
+	$color: inherit
+) {
+	font-weight: $weight;
+	font-size: clamp(rem($minFS), $vw, rem($maxFS));
+	color: $color;
 }
 
 @mixin headingBack($BGColor: $greenColor) {
@@ -81,7 +84,7 @@
 
 @mixin hoverLink($BGColor: $greenColor) {
 	position: relative;
-    transition: .5s all;
+	transition: 0.5s all;
 	&::before {
 		content: "";
 		position: absolute;
@@ -89,17 +92,17 @@
 		height: 0%;
 		background-color: $BGColor;
 		left: 50%;
-        bottom: 0%;
+		bottom: 0%;
 		transform: translateX(-50%);
 		border-radius: rem(7);
 		z-index: -1;
-        transition: .5s all;
+		transition: 0.5s all;
 	}
 	@media screen and (min-width: $tablet) {
 		&:hover {
 			&::before {
-                height: 44%;
-            }
+				height: 44%;
+			}
 		}
 	}
 }

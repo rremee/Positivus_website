@@ -2,6 +2,15 @@
 @use "../libs/pxtorem.scss" as *;
 @use "../base/mixins.scss" as *;
 
+.title-hero {
+	@include typography($weight: 500, $minFS: 42, $maxFS: 60);
+}
+
+.text-hero {
+	@include typography($maxFS: 20, $minFS: 18);
+	line-height: 1.4;
+}
+
 .text-block {
 	display: flex;
 	align-items: center;
@@ -11,12 +20,12 @@
 		text-align: center;
 	}
 	&__title {
-		@include textHeading-2;
+		@include typography($weight: 500, $minFS: 36, $maxFS: 40);
 		@include headingBack;
 	}
 
 	&__paragraph {
-		@include textParagraph;
+		@include typography;
 		max-width: clamp(rem(380), 40vw, rem(580));
 	}
 }
