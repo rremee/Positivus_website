@@ -25,35 +25,77 @@ document.addEventListener("DOMContentLoaded", () => {
 		logoAnimation.playbackRate = 1;
 	});
 
-	// Relocate Hero Picture
-	const heroContainer = document.querySelector(".hero__container"),
-		mediaTabletResponsive = window.matchMedia("(max-width: 767.98px"),
-		heroContent = document.querySelector(".hero__content"),
-		heroPicture = document.querySelector(".hero__picture");
+	// Picture Relocate
+	function pictureRelocate(
+		breakpointMedia,
+		itemSelector,
+		elemSelector,
+		insertFunc
+	) {
+		const mq = window.matchMedia(breakpointMedia),
+			items = Array.from(document.querySelectorAll(itemSelector));
 
-	function pictureRelocate() {
-		if (mediaTabletResponsive.matches) {
-			const heroTitle = heroContent.querySelector(".hero__title");
-			heroContent.insertBefore(heroPicture, heroTitle.nextSibling);
-		} else {
-			heroContainer.appendChild(heroPicture);
+		function relocate() {
+			items.forEach((item) => {
+				const el = item.querySelector(elemSelector);
+				if (!el) return;
+
+				if (mq.matches) {
+					insertFunc(item, el);
+				} else {
+					item.appendChild(el);
+				}
+			});
 		}
+
+		mq.addEventListener("change", relocate);
+		relocate();
 	}
 
-	mediaTabletResponsive.addEventListener("change", pictureRelocate);
+	pictureRelocate(
+		"(max-width: 1199.98px)",
+		".item-services",
+		".item-services__picture",
+		(item, picture) => {
+			const title = item.querySelector(".item-services__title");
+			if (title && picture) {
+				title.parentNode.insertBefore(picture, title.nextSibling);
+			}
+		}
+	);
 
-	pictureRelocate();
+	pictureRelocate(
+		"(max-width: 767.98px)",
+		".hero__container",
+		".hero__picture",
+		(container, picture) => {
+			const title = container.querySelector(".hero__title");
+			if (title) title.parentNode.insertBefore(picture, title.nextSibling);
+		}
+	);
 
 	// Lottie
-	const lottieAnimation = bodymovin.loadAnimation({
-		container: document.querySelector(".hero__picture"),
+	const lottieAnimations = [
+		{ selector: ".hero__picture", path: "/src/animation/hero/hero-img.json" },
+	];
+
+	const lottieSettings = {
 		renderer: "svg",
 		loop: true,
 		autoplay: true,
-		path: "/src/animation/hero/hero-img.json",
 		rendererSettings: {
 			preserveAspectRatio: "xMidYMid meet",
-			progressiveLoad: true
+			progressiveLoad: true,
+			viewBoxOnly: true,
 		},
+	};
+
+	lottieAnimations.forEach(({ selector, path }) => {
+		const container = document.querySelector(selector);
+		bodymovin.loadAnimation({
+			container,
+			path,
+			...lottieSettings,
+		});
 	});
 });

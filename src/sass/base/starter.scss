@@ -27,3 +27,7 @@ body {
 	padding: 0 clamp(rem(15), 2vw, rem(30));
 	width: 100%;
 }
+
+[class*="page__"] {
+	padding: clamp(rem(35), 10vw, rem(70)) 0;
+}

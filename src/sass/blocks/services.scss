@@ -1,0 +1,81 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.services {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(540), 1fr));
+		gap: clamp(rem(24), 6vw, rem(40));
+		@media screen and (max-width: rem(1199.98)) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+		}
+		@media screen and (max-width: $mobileL) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.item-services {
+	border: rem(1) solid $darkColor;
+	border-radius: rem(45);
+	padding: clamp(rem(20), 8vw, rem(50));
+	box-shadow: 0 rem(5) 0 0 $darkColor;
+	background: $grayColor;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: clamp(rem(20), 2vw, rem(69));
+	@media screen and (max-width: rem(1199.98)) {
+		justify-content: center;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		max-width: rem(221);
+		flex: 0 0 clamp(50%, 64vw, 100%);
+		row-gap: clamp(rem(18), 6vw, rem(93));
+		@media screen and (max-width: rem(1199.98)) {
+			row-gap: clamp(rem(18), 4vw, rem(93));
+		}
+	}
+	&__title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-wrap: nowrap;
+		span {
+			@include headingBack;
+		}
+	}
+
+	&__picture {
+		flex: 0 0 clamp(45%, 48vw, 50%);
+		max-width: rem(210);
+		img {
+			object-fit: cover;
+		}
+	}
+	&--green {
+		background-color: $greenColor;
+		.item-services__title {
+			span {
+				@include headingBack($BGColor: $whiteColor);
+			}
+		}
+	}
+	&--black {
+		background-color: $darkColor;
+		.item-services__title {
+			span {
+				@include headingBack($BGColor: $whiteColor);
+			}
+		}
+		&:last-child {
+			.item-services__title {
+				span {
+					@include headingBack($BGColor: $greenColor);
+				}
+			}
+		}
+	}
+}

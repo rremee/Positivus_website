@@ -11,10 +11,15 @@
 	line-height: 1.4;
 }
 
+.title-h3 {
+	@include typography($weight: 500, $minFS: 26, $maxFS: 30);
+}
+
 .text-block {
 	display: flex;
 	align-items: center;
 	gap: clamp(rem(24), 6vw, rem(47));
+	margin-bottom: clamp(rem(40), 8vw, rem(80));
 	@media screen and (max-width: $tabletS) {
 		flex-direction: column;
 		text-align: center;

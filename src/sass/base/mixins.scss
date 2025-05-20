@@ -52,6 +52,43 @@
 	}
 }
 
+@mixin buttonLink(
+	$textColor: $blackColor,
+	$bgColor: $darkColor,
+	$arrowColor: $greenColor,
+	$bgColorHover: $darkColorHover,
+	$arrowColorHover: $greenColorHover
+) {
+	font-weight: 400;
+	font-size: clamp(rem(18), 4vw, rem(20));
+	line-height: 1.4;
+	color: $textColor;
+	display: flex;
+	align-items: center;
+	column-gap: rem(15);
+	span {
+		width: rem(41);
+		height: rem(41);
+		border-radius: 100%;
+		background-color: $bgColor;
+		color: $arrowColor;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: rem(16);
+		transition: 0.5s all;
+	}
+	@media screen and (min-width: $tablet) {
+		&:hover {
+			span {
+				transform: rotate(390deg);
+				background-color: $bgColorHover;
+				color: $arrowColorHover;
+			}
+		}
+	}
+}
+
 // Typography
 
 @mixin typography(
@@ -67,19 +104,10 @@
 }
 
 @mixin headingBack($BGColor: $greenColor) {
-	position: relative;
-	&::before {
-		content: "";
-		position: absolute;
-		width: 110%;
-		height: 110%;
-		background-color: $BGColor;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		border-radius: rem(7);
-		z-index: -1;
-	}
+	background-color: $BGColor;
+	padding: 0 rem(7);
+	border-radius: rem(7);
+	box-decoration-break: clone;
 }
 
 @mixin hoverLink($BGColor: $greenColor) {

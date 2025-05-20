@@ -27,3 +27,10 @@
 		$borderFocus: $borderFocusButton
 	);
 }
+
+.button-link-bgb {
+	@include buttonLink;
+}
+.button-link-wbw {
+	@include buttonLink($textColor: $whiteColor, $bgColor: $whiteColor, $arrowColor: $blackColor, $bgColorHover: $grayColor, $arrowColorHover: $darkColorHover);
+}
