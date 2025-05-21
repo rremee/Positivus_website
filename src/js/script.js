@@ -74,9 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	);
 
+	pictureRelocate(
+		"(max-width: 1023.98px)",
+		".cta__wrapper",
+		".cta__picture",
+		(container, picture) => {
+			const title = container.querySelector(".cta__title");
+			if (title) title.parentNode.insertBefore(picture, title.nextSibling);
+		}
+	);
+
 	// Lottie
 	const lottieAnimations = [
 		{ selector: ".hero__picture", path: "/src/animation/hero/hero-img.json" },
+		{ selector: ".cta__picture", path: "/src/animation/cta/cta.json" },
 	];
 
 	const lottieSettings = {

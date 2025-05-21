@@ -1,0 +1,67 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.cta {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: clamp(rem(40), 6vw, rem(80));
+		row-gap: clamp(rem(20), 6vw, rem(40));
+		padding: 0 0 0 rem(60);
+		background-color: $grayColor;
+		border-radius: rem(45);
+		@media screen and (max-width: $laptop) {
+			flex-direction: column;
+			padding: clamp(rem(40), 5vw, rem(60)) 0 clamp(rem(40), 5vw, rem(60)) 0;
+			justify-content: center;
+		}
+		@media screen and (max-width: $tablet) {
+			flex-direction: column;
+			padding: clamp(rem(30), 5vw, rem(60));
+		}
+	}
+
+	&__content {
+		max-width: clamp(rem(300), 50vw, rem(500));
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(16), 6vw, rem(26));
+		.button-dark {
+			max-width: clamp(rem(250), 40vw, rem(290));
+		}
+		@media screen and (max-width: $tablet) {
+			.button-dark {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+		@media screen and (max-width: $mobileL) {
+			.button-dark {
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__text {
+		@include typography;
+	}
+
+	&__picture {
+		svg {
+			max-width: clamp(rem(400), 40vw, rem(494));
+			height: clamp(rem(300), 40vw, rem(394));
+		}
+		@media screen and (max-width: $tablet) {
+			svg {
+				max-width: clamp(rem(300), 40vw, rem(494));
+			}
+		}
+		@media screen and (max-width: $mobileL) {
+			display: none;
+		}
+	}
+}
