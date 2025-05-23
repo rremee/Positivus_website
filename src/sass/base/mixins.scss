@@ -63,8 +63,9 @@
 	font-size: clamp(rem(18), 4vw, rem(20));
 	line-height: 1.4;
 	color: $textColor;
-	display: flex;
+	display: inline-flex;
 	align-items: center;
+	align-self: flex-start;
 	column-gap: rem(15);
 	span {
 		width: rem(41);
@@ -83,6 +84,36 @@
 			span {
 				transform: rotate(390deg);
 				background-color: $bgColorHover;
+				color: $arrowColorHover;
+			}
+		}
+	}
+}
+
+@mixin buttonLinkArrow(
+	$textColor: $greenColor,
+	$arrowColor: $greenColor,
+	$textColorHover: $greenColorHover,
+	$arrowColorHover: $greenColorHover
+) {
+	font-weight: 400;
+	font-size: clamp(rem(18), 4vw, rem(20));
+	line-height: 1.4;
+	color: $textColor;
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start;
+	column-gap: rem(15);
+	transition: 0.5s all;
+	span {
+		color: $arrowColor;
+		transition: 0.5s all;
+	}
+	@media screen and (min-width: $tablet) {
+		&:hover {
+			color: $textColorHover;
+			span {
+				transform: translateX(rem(4)) rotate(-150deg);
 				color: $arrowColorHover;
 			}
 		}

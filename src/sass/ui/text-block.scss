@@ -27,6 +27,7 @@
 	&__title {
 		@include typography($weight: 500, $minFS: 36, $maxFS: 40);
 		@include headingBack;
+		text-wrap: nowrap;
 	}
 
 	&__paragraph {

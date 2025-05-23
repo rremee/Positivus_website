@@ -32,5 +32,14 @@
 	@include buttonLink;
 }
 .button-link-wbw {
-	@include buttonLink($textColor: $whiteColor, $bgColor: $whiteColor, $arrowColor: $blackColor, $bgColorHover: $grayColor, $arrowColorHover: $darkColorHover);
+	@include buttonLink(
+		$textColor: $whiteColor,
+		$bgColor: $whiteColor,
+		$arrowColor: $blackColor,
+		$bgColorHover: $grayColor,
+		$arrowColorHover: $darkColorHover
+	);
+}
+.link-arrow-green {
+	@include buttonLinkArrow;
 }

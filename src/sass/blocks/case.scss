@@ -1,0 +1,52 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.case {
+	&__wrapper {
+		background-color: $darkColor;
+		display: flex;
+		align-items: flex-start;
+		justify-content: stretch;
+		border-radius: rem(45);
+		padding: rem(70) rem(60);
+		column-gap: clamp(rem(24), 2vw, rem(64));
+		@media screen and (max-width: $laptop) {
+			background-color: unset;
+			column-gap: rem(20);
+			padding: unset;
+			align-items: stretch;
+			border-radius: unset;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(10), 4vw, rem(20));
+		flex: 0 0 clamp(rem(200), 16vw, rem(286));
+		@media screen and (max-width: $laptop) {
+			background-color: $darkColor;
+			border-radius: rem(45);
+			padding: rem(50) rem(40);
+			flex: 0 0 rem(350);
+		}
+		@media screen and (max-width: $mobileL) {
+			flex: 0 0 rem(320);
+		}
+	}
+
+	&__info {
+		@include typography($color: $whiteColor);
+	}
+	&__decor {
+		display: block;
+		align-self: center;
+		width: rem(1);
+		height: clamp(rem(120), 10vw, rem(186));
+		background-color: $whiteColor;
+		@media screen and (max-width: $laptop) {
+			display: none;
+		}
+	}
+}
