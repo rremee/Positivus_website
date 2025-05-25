@@ -1,0 +1,99 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.item-process {
+	background-color: $grayColor;
+	border: rem(1) solid $darkColor;
+	border-radius: rem(45);
+	padding: clamp(rem(28), 5vw, rem(40)) clamp(rem(20), 6vw, rem(60));
+	box-shadow: 0 5px 0 0 $darkColor;
+	text-align: left;
+	width: 100%;
+	cursor: pointer;
+	outline: none;
+	transition: 0.5s all;
+	.title-hero {
+		@include typography($weight: 500, $minFS: 30, $maxFS: 60);
+	}
+	.title-h3 {
+		@include typography($weight: 500, $minFS: 18, $maxFS: 30);
+	}
+	&:not(:last-child) {
+		margin-bottom: clamp(rem(24), 6vw, rem(30));
+	}
+	&__intro {
+		display: flex;
+		align-items: center;
+		column-gap: clamp(rem(10), 3vw, rem(30));
+		justify-content: space-between;
+		transition: 0.4s all;
+	}
+
+	&__name {
+		display: flex;
+		align-items: center;
+		column-gap: clamp(rem(10), 5vw, rem(25));
+	}
+
+	&__icon {
+		border-radius: 100%;
+		background-color: $grayColor;
+		border: rem(1) solid $darkColor;
+		width: clamp(rem(34), 9vw, rem(58));
+		height: clamp(rem(34), 9vw, rem(58));
+		position: relative;
+		flex-shrink: 0;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: $blackColor;
+			transition: 0.5s all;
+		}
+		&::before {
+			width: clamp(rem(12), 5vw, rem(25));
+			height: clamp(rem(4), 5vw, rem(7));
+		}
+		&::after {
+			width: clamp(rem(4), 5vw, rem(7));
+			height: clamp(rem(12), 5vw, rem(25));
+		}
+	}
+
+	&__content {
+		height: 0;
+		overflow: hidden;
+		transition: height 0.4s;
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+	}
+
+	&__divider {
+		border: rem(1) solid $darkColor;
+		width: 0%;
+		transition: 0.5s all;
+	}
+
+	&__text {
+		@include typography;
+	}
+	&--active {
+		background-color: $greenColor;
+		.item-process__intro {
+			margin-bottom: rem(30);
+		}
+		.item-process__divider {
+			width: 100%;
+		}
+		.item-process__icon {
+			&::after {
+				transform: translate(-50%, -50%) rotate(90deg);
+			}
+		}
+	}
+}

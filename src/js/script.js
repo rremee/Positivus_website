@@ -177,4 +177,38 @@ document.addEventListener("DOMContentLoaded", () => {
 		isDown = false;
 		baseT = new DOMMatrixReadOnly(getComputedStyle(caseWrapper).transform).m41;
 	});
+
+	// Process Accordion
+	const processWrapper = document.querySelector(".process__wrapper");
+
+	processWrapper.addEventListener("click", (e) => {
+		const btn = e.target.closest(".item-process");
+		if (!btn) return;
+		const content = btn.querySelector(".item-process__content");
+
+		content.style.transition = "none";
+		const currentH = content.getBoundingClientRect().height;
+		content.style.height = `${currentH}px`;
+		requestAnimationFrame(() => {
+			content.style.transition = "height 0.4s ease-in-out";
+
+			if (btn.classList.contains("item-process--active")) {
+				content.style.height = "0";
+				btn.classList.remove("item-process--active");
+			} else {
+				const fullH = content.scrollHeight;
+				btn.classList.add("item-process--active");
+				content.style.height = `${fullH}px`;
+			}
+			content.addEventListener(
+				"transitionend",
+				function cb(ev) {
+					if (ev.propertyName === "height" && btn.classList.contains("item-process--active")) {
+						content.style.height = "auto";
+					}
+				},
+				{ once: true }
+			);
+		});
+	});
 });

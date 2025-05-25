@@ -33,5 +33,8 @@
 	&__paragraph {
 		@include typography;
 		max-width: clamp(rem(380), 40vw, rem(580));
+		&--short {
+			max-width: rem(292);
+		}
 	}
 }
