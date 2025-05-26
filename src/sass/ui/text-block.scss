@@ -14,6 +14,9 @@
 .title-h3 {
 	@include typography($weight: 500, $minFS: 26, $maxFS: 30);
 }
+.title-h4 {
+	@include typography($weight: 500, $minFS: 18, $maxFS: 20);
+}
 
 .text-block {
 	display: flex;

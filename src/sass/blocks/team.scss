@@ -1,0 +1,118 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.team {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(306), 1fr));
+		gap: clamp(rem(30), 5vw, rem(40));
+		margin-bottom: clamp(rem(30), 5vw, rem(40));
+		@media screen and (max-width: $mobileL) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__btn {
+		display: block;
+		margin-left: auto;
+		@media screen and (max-width: $tabletS) {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+.item-team {
+	border: rem(1) solid $darkColor;
+	border-radius: rem(45);
+	padding: clamp(rem(30), 4vw, rem(40)) clamp(rem(10), 3vw, rem(35));
+	box-shadow: 0 5px 0 0 $darkColor;
+	background: $whiteColor;
+	display: flex;
+	flex-direction: column;
+	row-gap: clamp(rem(18), 4vw, rem(28));
+	&__person {
+		display: flex;
+		column-gap: rem(20);
+	}
+
+	&__picture {
+		filter: drop-shadow(8px 6px 0 $darkColor);
+	}
+	&__avatar {
+		display: inline-block;
+		width: rem(105);
+		height: rem(105);
+		background: url("/src/img/team/team_01.jpg") center/cover no-repeat, $greenColor;
+		background-blend-mode: multiply;
+		mask: url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2099%2098'%3E%3Cpath%20d='M84.631%2048.9117C117.473%2086.3213%2087.1455%20116.649%2049.7359%2083.8068C12.3263%20116.649%20-18.0016%2086.3213%2014.8408%2048.9117C-18.0016%2011.5021%2012.3263%20-18.8258%2049.7359%2014.0166C87.1455%20-18.8258%20117.473%2011.5021%2084.631%2048.9117Z'%20fill='white'/%3E%3C/svg%3E")
+			no-repeat center/cover;
+	}
+
+	&__info {
+		align-self: end;
+	}
+
+	&__name {
+		margin-bottom: rem(2);
+	}
+
+	&__position {
+		@include typography;
+	}
+
+	&__linked {
+		align-self: start;
+		display: inline-flex;
+		padding: rem(9);
+		align-items: center;
+		justify-content: center;
+		border-radius: 100%;
+		background-color: $blackColor;
+		color: $greenColor;
+		transition: 0.5s all;
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				background-color: $darkColorHover;
+				color: $greenColorHover;
+				transform: rotate(360deg);
+			}
+		}
+	}
+
+	&__divider {
+		border: rem(1) solid $blackColor;
+		width: 100%;
+	}
+
+	&__text {
+		@include typography;
+	}
+	&:nth-of-type(2) {
+		.item-team__avatar {
+			background: url("/src/img/team/team_02.jpg") center center/cover no-repeat, $greenColor;
+		}
+	}
+	&:nth-of-type(3) {
+		.item-team__avatar {
+			background: url("/src/img/team/team_03.jpg") center center/cover no-repeat, $greenColor;
+		}
+	}
+	&:nth-of-type(4) {
+		.item-team__avatar {
+			background: url("/src/img/team/team_04.jpg") center center/cover no-repeat, $greenColor;
+		}
+	}
+	&:nth-of-type(5) {
+		.item-team__avatar {
+			background: url("/src/img/team/team_05.jpg") center center/cover no-repeat, $greenColor;
+		}
+	}
+	&:nth-of-type(6) {
+		.item-team__avatar {
+			background: url("/src/img/team/team_06.jpg") center center/cover no-repeat, $greenColor;
+		}
+	}
+	@media screen and (max-width: $tablet) {
+		align-items: center;
+	}
+}
