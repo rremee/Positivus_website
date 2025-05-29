@@ -7,7 +7,7 @@
 		background-color: $darkColor;
 		display: flex;
 		align-items: flex-start;
-		justify-content: stretch;
+		justify-content: space-between;
 		border-radius: rem(45);
 		padding: rem(70) rem(60);
 		column-gap: clamp(rem(24), 2vw, rem(64));

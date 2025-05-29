@@ -1,0 +1,136 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.testimonials {
+	&__wrapper {
+		background-color: $darkColor;
+		border-radius: rem(45);
+		overflow: hidden;
+		padding: clamp(rem(34), 10vw, rem(76)) 0;
+	}
+
+	&__nav {
+		margin-top: clamp(rem(60), 10vw, rem(124));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: clamp(rem(30), 12vw, rem(189));
+		.testimonials-pagination {
+			order: 2;
+		}
+		.testimonials-next {
+			order: 3;
+		}
+	}
+
+	&-slider {
+		.swiper-button-prev,
+		.swiper-button-next {
+			display: none;
+		}
+		.swiper-slide {
+			flex: 0 0 auto;
+		}
+		.testimonials-prev,
+		.testimonials-next {
+			background: none;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			z-index: 10;
+			color: $whiteColor;
+			opacity: 0.6;
+			transition: 0.5s opacity, 0.5s transform;
+			&:active {
+				transform: scale(0.8);
+				opacity: 1;
+			}
+			@media screen and (min-width: $tablet) {
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+		.testimonials-prev {
+			transform: rotate(180deg);
+			&:active {
+				transform: rotate(180deg) scale(0.8);
+			}
+		}
+		.testimonials-pagination {
+			display: flex;
+			align-items: center;
+			gap: clamp(rem(10), 4vw, rem(19));
+			max-width: max-content;
+			.swiper-pagination-bullet {
+				background: none !important;
+				border: none !important;
+				border-radius: 0 !important;
+				width: auto !important;
+				height: auto !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				overflow: visible !important;
+				opacity: 1 !important;
+				font-size: rem(14);
+				color: $whiteColor;
+				transition: color 0.4s;
+				&-active {
+					color: $greenColor;
+				}
+			}
+		}
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		row-gap: clamp(rem(20), 3vw, rem(48));
+		@media screen and (max-width: $tablet) {
+			align-items: center;
+		}
+	}
+
+	&__bubble {
+		padding: clamp(rem(35), 6vw, rem(50)) clamp(rem(30), 6vw, rem(52));
+		width: clamp(rem(380), 50vw, rem(606));
+		aspect-ratio: 606/238;
+		border-radius: rem(45);
+		border: rem(1) solid $greenColor;
+		@media screen and (max-width: $tablet) {
+			width: 90%;
+			max-width: none;
+		}
+	}
+	&__text {
+		@include typography($color: $whiteColor);
+		position: relative;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 266px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__author {
+		padding-left: clamp(rem(20), 12vw, rem(80));
+		@media screen and (max-width: $tablet) {
+			align-self: start;
+			max-width: rem(260);
+		}
+	}
+
+	&__name {
+		margin-bottom: rem(4);
+		color: $greenColor;
+	}
+
+	&__position {
+		@include typography($color: $whiteColor);
+	}
+}

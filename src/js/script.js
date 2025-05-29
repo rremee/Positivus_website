@@ -1,4 +1,12 @@
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "/src/sass/style.scss";
+
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+
+Swiper.use([Navigation, Pagination]);
 
 document.addEventListener("DOMContentLoaded", () => {
 	//Burger
@@ -210,5 +218,28 @@ document.addEventListener("DOMContentLoaded", () => {
 				{ once: true }
 			);
 		});
+	});
+
+	// Testimonials Swiper
+	const swiper = new Swiper(".testimonials-slider", {
+		loop: true,
+		speed: 500,
+		breakpoints: {
+			0: { slidesPerView: 1 },
+			768: { slidesPerView: 1.8 },
+		},
+		centeredSlides: true,
+		spaceBetween: 50,
+		navigation: {
+			nextEl: ".testimonials-next",
+			prevEl: ".testimonials-prev",
+		},
+		pagination: {
+			el: ".testimonials-pagination",
+			clickable: true,
+			renderBullet: function (index, className) {
+				return `<span class="${className} icon-logo"></span>`;
+			},
+		},
 	});
 });
