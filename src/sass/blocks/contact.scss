@@ -1,0 +1,131 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.contact {
+	&__wrapper {
+		border-radius: rem(45);
+		padding: clamp(rem(34), 6vw, rem(60)) clamp(rem(28), 7vw, rem(100)) clamp(rem(50), 6vw, rem(80))
+			clamp(rem(28), 7vw, rem(100));
+		background-color: $grayColor;
+		position: relative;
+	}
+
+	&__form {
+		form {
+			max-width: clamp(rem(300), 50vw, rem(556));
+			> div {
+				display: flex;
+				flex-direction: column;
+				row-gap: rem(5);
+				&:not(:last-child) {
+					margin-bottom: rem(25);
+				}
+			}
+			.button-dark {
+				width: 100%;
+				max-width: 100%;
+			}
+
+			button {
+				margin-top: clamp(rem(20), 6vw, rem(40));
+			}
+			@media screen and (max-width: $tablet) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&__picture {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		svg {
+			width: clamp(rem(260), 30vw, rem(347));
+			min-height: rem(648);
+		}
+		@media screen and (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	&__toggle {
+		margin-bottom: rem(40);
+		display: flex;
+		align-items: center;
+		column-gap: clamp(rem(17), 10vw, rem(35));
+		label {
+			display: flex;
+			align-items: center;
+			column-gap: clamp(rem(7), 2vw, rem(14));
+			cursor: pointer;
+		}
+		input {
+			appearance: none;
+			width: clamp(rem(14), 5vw, rem(28));
+			height: clamp(rem(14), 5vw, rem(28));
+			border-radius: 50%;
+			border: rem(1) solid $blackColor;
+			background: $whiteColor;
+			position: relative;
+			flex-shrink: 0;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				background-color: $greenColor;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 100%;
+				transition: 0.4s all;
+			}
+			&.is-checked {
+				&::after {
+					width: clamp(rem(8), 3vw, rem(16));
+					height: clamp(rem(8), 3vw, rem(16));
+				}
+			}
+		}
+	}
+
+	&__label {
+		font-size: rem(16);
+		line-height: 1.75;
+	}
+
+	&__input {
+		border: rem(1) solid $blackColor;
+		border-radius: rem(14);
+		padding: rem(18) rem(30);
+		background: $whiteColor;
+		transition: 0.4s all;
+		&:focus {
+			outline: none;
+			border: rem(1) solid $greenColorFocus;
+		}
+		&::placeholder {
+			color: $disableColorButtonText;
+			font-size: rem(18);
+		}
+	}
+	&__textarea {
+		border: rem(1) solid $blackColor;
+		border-radius: rem(14);
+		padding: rem(18) rem(30);
+		background: $whiteColor;
+		resize: none;
+		min-height: rem(190);
+		&:focus {
+			outline: none;
+			border: rem(1) solid $greenColorFocus;
+		}
+		&::placeholder {
+			color: $disableColorButtonText;
+			font-size: rem(18);
+		}
+	}
+}

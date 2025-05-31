@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const lottieAnimations = [
 		{ selector: ".hero__picture", path: "/src/animation/hero/hero-img.json" },
 		{ selector: ".cta__picture", path: "/src/animation/cta/cta.json" },
+		{ selector: ".contact__picture", path: "/src/animation/contact/contact.json" }
 	];
 
 	const lottieSettings = {
@@ -241,5 +242,44 @@ document.addEventListener("DOMContentLoaded", () => {
 				return `<span class="${className} icon-logo"></span>`;
 			},
 		},
+	});
+
+	// Form Section
+
+	// Form Tabs
+	const radios = document.querySelectorAll(".contact__toggle-input"),
+		formSayHi = document.getElementById("form-sayHi"),
+		formGetQuote = document.getElementById("form-getQuote"),
+		radioLabels = document.querySelectorAll(".contact__toggle [role=radio]");
+
+	radios.forEach((radio) => {
+		radio.addEventListener("change", () => {
+			const showSayHi = radio.value === "sayHi";
+
+			formSayHi.hidden = !showSayHi;
+			formGetQuote.hidden = showSayHi;
+
+			radioLabels.forEach((label) => {
+				const input = label.querySelector("input");
+				const checked = input.checked;
+				label.setAttribute("aria-checked", checked);
+				label.setAttribute("tabindex", checked ? "0" : "-1");
+			});
+		});
+	});
+
+	// Custom Radio
+	function updateRadio(r) {
+		if (r.checked) {
+			r.classList.add("is-checked");
+		} else {
+			r.classList.remove("is-checked");
+		}
+	}
+	radios.forEach((radio) => {
+		updateRadio(radio);
+		radio.addEventListener("change", () => {
+			radios.forEach((r) => updateRadio(r));
+		});
 	});
 });

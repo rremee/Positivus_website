@@ -562,6 +562,150 @@
 						</div>
 					</div>
 				</section>
+
+				<section class="page__contact contact">
+					<div class="contact__container">
+						<div class="text-block">
+							<h2 class="text-block__title">Contact Us</h2>
+							<p class="text-block__paragraph text-block__paragraph--short">
+								Connect with Us: Let's Discuss Your Digital Marketing Needs
+							</p>
+						</div>
+						<div class="contact__wrapper">
+							<div class="contact__form">
+								<fieldset class="contact__toggle" role="radiogroup" aria-labelledby="contact-toggle-label">
+									<div class="contact__toggle-item">
+										<label role="radio" aria-checked="true" tabindex="0">
+											<input
+												class="contact__toggle-input"
+												type="radio"
+												id="tab-sayHi"
+												name="contactFormType"
+												value="sayHi"
+												checked
+											/>
+											<span> Say Hi</span>
+										</label>
+									</div>
+									<div class="contact__toggle-item">
+										<label role="radio" aria-checked="false" tabindex="-1">
+											<input
+												class="contact__toggle-input"
+												type="radio"
+												id="tab-getQuote"
+												name="contactFormType"
+												value="getQuote"
+											/>
+											<span> Get Quote</span>
+										</label>
+									</div>
+								</fieldset>
+
+								<form
+									id="form-sayHi"
+									class="contact__sayhi sayhi-contact"
+									aria-labelledby="tab-sayHi"
+								>
+									<div class="sayhi-contact__item">
+										<label class="contact__label" for="sayHi-name">Name</label>
+										<input
+											class="contact__input"
+											type="text"
+											id="sayHi-name"
+											name="name"
+											placeholder="Name"
+										/>
+									</div>
+									<div class="sayhi-contact__item">
+										<label class="contact__label" for="sayHi-email">Email*</label>
+										<input
+											class="contact__input"
+											type="email"
+											id="sayHi-email"
+											name="email"
+											placeholder="Email"
+											required
+										/>
+									</div>
+									<div class="sayhi-contact__item">
+										<label class="contact__label" for="sayHi-message">Message*</label>
+										<textarea
+											class="contact__textarea"
+											id="sayHi-message"
+											name="message"
+											placeholder="Message"
+											required
+										></textarea>
+									</div>
+									<button class="sayhi-contact__btn button-dark" type="submit">Send Message</button>
+								</form>
+
+								<form
+									id="form-getQuote"
+									class="contact__getquote getquote-contact"
+									aria-labelledby="tab-getQuote"
+									hidden
+								>
+									<div class="getquote-contact__item">
+										<label class="contact__label" for="getQuote-name">Name*</label>
+										<input
+											class="contact__input"
+											type="text"
+											id="getQuote-name"
+											name="name"
+											placeholder="Name"
+											required
+										/>
+									</div>
+									<div class="getquote-contact__item">
+										<label class="contact__label" for="getQuote-email">Email*</label>
+										<input
+											class="contact__input"
+											type="email"
+											id="getQuote-email"
+											name="email"
+											placeholder="Email"
+											required
+										/>
+									</div>
+									<div class="getquote-contact__item">
+										<label class="contact__label" for="getQuote-company">Company</label>
+										<input
+											class="contact__input"
+											type="text"
+											id="getQuote-company"
+											name="company"
+											placeholder="Company"
+										/>
+									</div>
+									<div class="getquote-contact__item">
+										<label class="contact__label" for="getQuote-phone">Phone*</label>
+										<input
+											class="contact__input"
+											type="tel"
+											id="getQuote-phone"
+											name="phone"
+											placeholder="+1 (555) 123-4567"
+											required
+										/>
+									</div>
+									<div class="getquote-contact__item">
+										<label class="contact__label" for="getQuote-details">Details*</label>
+										<textarea
+											class="contact__textarea"
+											id="getQuote-details"
+											name="details"
+											placeholder="Details"
+											required
+										></textarea>
+									</div>
+									<button class="getquote-contact__btn button-dark" type="submit">Send Quote</button>
+								</form>
+							</div>
+							<div class="contact__picture"></div>
+						</div>
+					</div>
+				</section>
 			</main>
 			<footer class="footer"></footer>
 		</div>
