@@ -247,7 +247,7 @@
 							</p>
 						</div>
 						<div class="process__wrapper">
-							<button class="process__item item-process">
+							<div class="process__item item-process">
 								<div class="item-process__intro">
 									<div class="item-process__name">
 										<div class="item-process__num title-hero">01</div>
@@ -261,8 +261,8 @@
 										During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.
 									</p>
 								</div>
-							</button>
-							<button class="process__item item-process">
+							</div>
+							<div class="process__item item-process">
 								<div class="item-process__intro">
 									<div class="item-process__name">
 										<div class="item-process__num title-hero">02</div>
@@ -276,8 +276,8 @@
 										In this phase, we conduct a deep dive into your industry landscape, audience behavior, and competitive positioning. We gather data through market analysis, keyword research, and stakeholder interviews to identify opportunities and challenges. Based on these insights, we craft a clear, actionable strategy—outlining goals, timelines, and resource allocation—to ensure every initiative aligns with your overarching objectives and delivers measurable impact.
 									</p>
 								</div>
-							</button>
-							<button class="process__item item-process">
+							</div>
+							<div class="process__item item-process">
 								<div class="item-process__intro">
 									<div class="item-process__name">
 										<div class="item-process__num title-hero">03</div>
@@ -291,8 +291,8 @@
 										Once the strategy is in place, we move into execution: designing and launching campaigns, developing content assets, and configuring technical systems. Our team coordinates cross-functional efforts—creative, development, and marketing—to bring the plan to life. We adhere to best practices and quality standards at every step, ensuring deliverables go live on time, function flawlessly, and engage your target audience effectively.
 									</p>
 								</div>
-							</button>
-							<button class="process__item item-process">
+							</div>
+							<div class="process__item item-process">
 								<div class="item-process__intro">
 									<div class="item-process__name">
 										<div class="item-process__num title-hero">04</div>
@@ -306,8 +306,8 @@
 										After launch, we track key performance indicators in real time, using analytics platforms and custom dashboards to measure traffic, conversions, and user engagement. We identify patterns and bottlenecks, then A/B-test various elements—headlines, calls-to-action, targeting parameters—to continuously refine performance. This iterative process ensures your campaigns stay agile, responsive to audience behavior, and efficient in budget utilization.
 									</p>
 								</div>
-							</button>
-							<button class="process__item item-process">
+							</div>
+							<div class="process__item item-process">
 								<div class="item-process__intro">
 									<div class="item-process__name">
 										<div class="item-process__num title-hero">05</div>
@@ -321,8 +321,8 @@
 										Transparency is vital: we compile comprehensive reports that translate raw data into clear insights, highlighting successes, areas for improvement, and next-step recommendations. Regular check-ins—weekly summaries, monthly reviews, or quarterly deep-dives—keep you informed and involved. Through open dialogue, we ensure alignment on performance metrics, strategic pivots, and emerging opportunities.
 									</p>
 								</div>
-							</button>
-							<button class="process__item item-process">
+							</div>
+							<div class="process__item item-process">
 								<div class="item-process__intro">
 									<div class="item-process__name">
 										<div class="item-process__num title-hero">06</div>
@@ -336,7 +336,7 @@
 										Strategy is never “set and forget.” We adopt a culture of ongoing evaluation, soliciting feedback, testing new approaches, and integrating lessons learned. By conducting periodic audits, revisiting goals, and exploring the latest tools and trends, we evolve your programs to maintain peak effectiveness. This commitment to perpetual refinement drives sustainable growth and long-term success.
 									</p>
 								</div>
-							</button>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -573,9 +573,9 @@
 						</div>
 						<div class="contact__wrapper">
 							<div class="contact__form">
-								<fieldset class="contact__toggle" role="radiogroup" aria-labelledby="contact-toggle-label">
+								<fieldset class="contact__toggle">
 									<div class="contact__toggle-item">
-										<label role="radio" aria-checked="true" tabindex="0">
+										<label >
 											<input
 												class="contact__toggle-input"
 												type="radio"
@@ -583,19 +583,19 @@
 												name="contactFormType"
 												value="sayHi"
 												checked
-											/>
+											>
 											<span> Say Hi</span>
 										</label>
 									</div>
 									<div class="contact__toggle-item">
-										<label role="radio" aria-checked="false" tabindex="-1">
+										<label>
 											<input
 												class="contact__toggle-input"
 												type="radio"
 												id="tab-getQuote"
 												name="contactFormType"
 												value="getQuote"
-											/>
+											>
 											<span> Get Quote</span>
 										</label>
 									</div>
@@ -604,7 +604,6 @@
 								<form
 									id="form-sayHi"
 									class="contact__sayhi sayhi-contact"
-									aria-labelledby="tab-sayHi"
 								>
 									<div class="sayhi-contact__item">
 										<label class="contact__label" for="sayHi-name">Name</label>
@@ -614,7 +613,7 @@
 											id="sayHi-name"
 											name="name"
 											placeholder="Name"
-										/>
+										>
 									</div>
 									<div class="sayhi-contact__item">
 										<label class="contact__label" for="sayHi-email">Email*</label>
@@ -625,7 +624,7 @@
 											name="email"
 											placeholder="Email"
 											required
-										/>
+										>
 									</div>
 									<div class="sayhi-contact__item">
 										<label class="contact__label" for="sayHi-message">Message*</label>
@@ -643,7 +642,6 @@
 								<form
 									id="form-getQuote"
 									class="contact__getquote getquote-contact"
-									aria-labelledby="tab-getQuote"
 									hidden
 								>
 									<div class="getquote-contact__item">
@@ -655,7 +653,7 @@
 											name="name"
 											placeholder="Name"
 											required
-										/>
+										>
 									</div>
 									<div class="getquote-contact__item">
 										<label class="contact__label" for="getQuote-email">Email*</label>
@@ -666,7 +664,7 @@
 											name="email"
 											placeholder="Email"
 											required
-										/>
+										>
 									</div>
 									<div class="getquote-contact__item">
 										<label class="contact__label" for="getQuote-company">Company</label>
@@ -676,7 +674,7 @@
 											id="getQuote-company"
 											name="company"
 											placeholder="Company"
-										/>
+										>
 									</div>
 									<div class="getquote-contact__item">
 										<label class="contact__label" for="getQuote-phone">Phone*</label>
@@ -687,7 +685,7 @@
 											name="phone"
 											placeholder="+1 (555) 123-4567"
 											required
-										/>
+										>
 									</div>
 									<div class="getquote-contact__item">
 										<label class="contact__label" for="getQuote-details">Details*</label>
