@@ -21,16 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// Logo Img Spinning
-	const logo = document.querySelector(".header__logo"),
-		logoImg = logo.querySelector("img"),
-		[logoAnimation] = logoImg.getAnimations();
+	const logos = document.querySelectorAll(".logo");
 
-	logo.addEventListener("mouseover", () => {
-		logoAnimation.playbackRate = 4;
-	});
+	logos.forEach((logo) => {
+		const logoImg = logo.querySelector("img");
+		if (!logoImg) return;
 
-	logo.addEventListener("mouseout", () => {
-		logoAnimation.playbackRate = 1;
+		const [logoAnimation] = logoImg.getAnimations();
+		if (!logoAnimation) return;
+
+		logo.addEventListener("mouseover", () => {
+			logoAnimation.playbackRate = 4;
+		});
+
+		logo.addEventListener("mouseout", () => {
+			logoAnimation.playbackRate = 1;
+		});
 	});
 
 	// Picture Relocate

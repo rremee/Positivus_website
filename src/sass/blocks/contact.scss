@@ -3,6 +3,7 @@
 @use "../base/mixins.scss" as *;
 
 .contact {
+	padding-bottom: clamp(rem(70), 10vw, rem(140));
 	&__wrapper {
 		border-radius: rem(45);
 		padding: clamp(rem(34), 6vw, rem(60)) clamp(rem(28), 7vw, rem(100)) clamp(rem(50), 6vw, rem(80))

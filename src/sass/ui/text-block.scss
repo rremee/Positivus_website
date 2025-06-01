@@ -41,3 +41,20 @@
 		}
 	}
 }
+
+.logo {
+	display: flex;
+	align-items: center;
+	column-gap: rem(13);
+	font-weight: 500;
+	font-size: clamp(rem(24), 8vw, rem(40));
+	z-index: 200;
+	position: relative;
+	&--white {
+		color: $whiteColor;
+		font-size: clamp(rem(20), 8vw, rem(33));
+	}
+	img {
+		animation: logoImgAnimation 8s linear infinite;
+	}
+}

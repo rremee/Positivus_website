@@ -1,0 +1,187 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.footer {
+	background-color: $darkColor;
+	border-radius: rem(45) rem(45) 0 0;
+	padding: clamp(rem(50), 10vw, rem(55)) clamp(rem(22), 5vw, rem(60));
+
+	&__divider {
+		border: rem(1) solid $whiteColor;
+		width: 100%;
+		margin-bottom: rem(50);
+	}
+}
+
+.top-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: rem(40);
+	margin-bottom: rem(66);
+	flex-wrap: wrap;
+	@media screen and (max-width: $tabletS) {
+		flex-direction: column;
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: clamp(rem(26), 3vw, rem(40));
+		@media screen and (max-width: $tabletS) {
+			flex-direction: column;
+		}
+	}
+
+	&__link {
+		color: $whiteColor;
+		@media screen and (min-width: $tabletS) {
+			position: relative;
+			transition: 0.4s color;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: rem(1);
+				background-color: $whiteColor;
+				bottom: 0;
+				left: 0;
+				transition: 0.4s all;
+			}
+		}
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				color: $greenColor;
+				&::after {
+					background-color: $greenColor;
+					width: 0%;
+				}
+			}
+		}
+	}
+
+	&__social {
+		display: flex;
+		align-items: center;
+		column-gap: rem(20);
+	}
+
+	&__social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $whiteColor;
+		border-radius: 100%;
+		width: rem(30);
+		height: rem(30);
+		font-size: rem(17);
+		transition: 0.4s background-color;
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				background-color: $greenColorHover;
+			}
+		}
+	}
+}
+
+.middle-footer {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	gap: rem(40);
+	margin-bottom: rem(50);
+	flex-wrap: wrap;
+	&__info {
+		max-width: rem(332);
+	}
+
+	&__title {
+		display: inline-block;
+		@include headingBack;
+		margin-bottom: rem(27);
+	}
+
+	&__contact {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(20);
+		@include typography($color: $whiteColor);
+		address {
+			font-style: normal;
+		}
+	}
+
+	&__form {
+		background-color: #292a32;
+		padding: clamp(rem(30), 7vw, rem(58)) clamp(rem(30), 5vw, rem(40));
+		border-radius: rem(14);
+		display: flex;
+		gap: rem(20);
+		input {
+			border: rem(1) solid $whiteColor;
+			border-radius: rem(14);
+			padding: rem(22) rem(35);
+			outline: none;
+			background-color: transparent;
+			color: $whiteColor;
+			transition: 0.4s border;
+			&::placeholder {
+				color: $whiteColor;
+				opacity: 0.7;
+			}
+			&:focus {
+				border: rem(1) solid $greenColor;
+			}
+		}
+		@media screen and (max-width: $tablet) {
+			flex-direction: column;
+			width: 100%;
+			input {
+				width: 100%;
+			}
+			button {
+				width: 100%;
+				max-width: 100%;
+				font-size: clamp(rem(16), 4vw, rem(20));
+			}
+		}
+	}
+}
+
+.bottom-footer {
+	display: flex;
+	align-items: center;
+	gap: rem(40);
+	flex-wrap: wrap;
+	@include typography($color: $whiteColor);
+	@media screen and (max-width: $tabletS) {
+		text-align: center;
+		justify-content: center;
+	}
+
+	&__privacy {
+		@media screen and (min-width: $tabletS) {
+			position: relative;
+			transition: 0.4s color;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: rem(1);
+				background-color: $whiteColor;
+				bottom: 0;
+				left: 0;
+				transition: 0.4s all;
+			}
+		}
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				color: $greenColor;
+				&::after {
+					background-color: $greenColor;
+					width: 0%;
+				}
+			}
+		}
+	}
+}
