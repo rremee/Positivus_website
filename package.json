@@ -1,6 +1,7 @@
 {
   "name": "positivus_site",
   "version": "1.0.0",
+  "type": "module",
   "description": "Positivus Website",
   "main": "vite.config.js",
   "scripts": {
@@ -11,7 +12,8 @@
   "devDependencies": {
     "postcss-pxtorem": "^6.1.0",
     "sass": "^1.84.0",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
     "swiper": "^11.2.8"
