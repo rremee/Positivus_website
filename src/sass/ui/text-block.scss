@@ -3,7 +3,7 @@
 @use "../base/mixins.scss" as *;
 
 .title-hero {
-	@include typography($weight: 500, $minFS: 42, $maxFS: 60);
+	@include typography($weight: 500, $minFS: 42, $maxFS: 60, $vw: 4vw);
 }
 
 .text-hero {

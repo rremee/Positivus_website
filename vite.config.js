@@ -11,18 +11,22 @@ export default defineConfig({
 			partialDirectory: resolve(__dirname, "src/partials"),
 			context(pagePath) {
 				const name = pagePath.replace(/^\//, "").replace(/\.html$/, "");
-				let title = "";
+				let pageTitle = "";
+				let pageScript = "";
 				switch (name) {
 					case "":
-						title = "Positivus";
+						pageTitle = "Positivus";
+						pageScript = "home.js";
 						break;
 					case "about":
-						title = "About Us";
+						pageTitle = "About Us";
+						pageScript = "about.js";
 						break;
 					default:
-						title = "Positivus";
+						pageTitle = "Positivus";
+						pageScript = "home.js";
 				}
-				return {pageTitle: title};
+				return {pageTitle, pageScript};
 			}
 		})
 	],
