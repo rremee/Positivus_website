@@ -13,6 +13,7 @@
 @use "../sass/blocks/header.scss";
 @use "../sass/blocks/footer.scss";
 
+//Hero
 @use "../sass/blocks/companies.scss";
 @use "../sass/blocks/services.scss";
 @use "../sass/blocks/cta.scss";
@@ -21,3 +22,6 @@
 @use "../sass/blocks/team.scss";
 @use "../sass/blocks/testimonials.scss";
 @use "../sass/blocks/contact.scss";
+
+//About
+@use "../sass/blocks/numbers.scss";

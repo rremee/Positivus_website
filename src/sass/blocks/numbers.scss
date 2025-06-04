@@ -1,0 +1,68 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.numbers {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(204), 1fr));
+		row-gap: rem(20);
+		@media screen and (max-width: $tabletS) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(174), 1fr));
+		}
+	}
+
+	&__item {
+		position: relative;
+		padding: clamp(rem(20), 3vw, rem(34)) rem(10) rem(10) rem(20);
+		@media screen and (max-width: rem(673.98)) {
+			&:last-child {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		display: inline-block;
+		border: rem(1) solid $darkColor;
+		width: 100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: rem(20);
+		z-index: -1;
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: $whiteColor;
+			width: 110%;
+			height: 80%;
+			bottom: -2%;
+			left: 50%;
+			transform: translateX(-50%);
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: start;
+		flex-direction: column;
+		row-gap: rem(4);
+		@media screen and (max-width: rem(673.98)) {
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__num {
+		@include typography($weight: 500, $minFS: 36, $maxFS: 40);
+	}
+
+	&__name {
+		@include typography($vw: 2vw);
+	}
+}
