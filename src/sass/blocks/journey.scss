@@ -1,0 +1,127 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+@use "../animation/animations.scss" as *;
+
+.journey {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(44), 8vw, rem(70));
+	}
+}
+.item-journey {
+	display: flex;
+	align-items: start;
+	gap: clamp(rem(22), 4vw, rem(38));
+	position: relative;
+	&:nth-child(even) {
+		align-self: flex-end;
+		.item-journey__icon {
+			animation-direction: reverse;
+		}
+		@media screen and (max-width: $tabletS) {
+			align-self: stretch;
+			.item-journey__date {
+				span {
+					animation-direction: reverse;
+				}
+			}
+		}
+	}
+	&__date {
+		@media screen and (min-width: $tabletS) {
+			span {
+				display: none;
+			}
+		}
+		@media screen and (max-width: $tabletS) {
+			display: flex;
+			align-items: center;
+			column-gap: clamp(rem(16), 6vw, rem(26));
+			padding-left: rem(36);
+			span {
+				font-size: rem(36);
+				color: $greenColor;
+				animation: logoImgAnimation 8s linear infinite;
+			}
+		}
+	}
+
+	&__wrapper {
+		background-color: $darkColor;
+		border-radius: rem(45);
+		padding: rem(36) rem(40);
+		color: $whiteColor;
+		display: flex;
+		column-gap: clamp(rem(32), 4vw, rem(54));
+		width: clamp(rem(400), 70vw, rem(600));
+		@media screen and (max-width: $tabletS) {
+			width: 100%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		row-gap: rem(20);
+	}
+
+	&__icon {
+		font-size: clamp(rem(18), 4vw, rem(36));
+		color: $greenColor;
+		animation: logoImgAnimation 8s linear infinite;
+		display: inline-flex;
+		align-self: start;
+		@media screen and (max-width: $tabletS) {
+			animation: unset;
+		}
+	}
+
+	&__text {
+		@include typography;
+		&--short {
+			max-width: rem(272);
+			@media screen and (max-width: $tablet) {
+				max-width: unset;
+			}
+		}
+	}
+	@media screen and (max-width: $tablet) {
+		flex-direction: column;
+	}
+}
+
+.journey-decor {
+	width: rem(330);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	&--1 {
+		left: -80%;
+	}
+	&--2 {
+		right: -20%;
+		bottom: 0;
+	}
+	.journey-circle {
+		border: rem(1) solid $darkColor;
+		width: 100%;
+		border-radius: 50%;
+		height: rem(41);
+		animation: circleScaling 3.4s infinite linear;
+		&:nth-child(2) {
+			animation-delay: 0.3s;
+		}
+		&:nth-child(3) {
+			animation-delay: 0.5s;
+		}
+		&:not(:first-child) {
+			margin-top: rem(-15);
+		}
+	}
+	@media screen and (max-width: $laptop) {
+		display: none;
+	}
+}

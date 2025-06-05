@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				if (mq.matches) {
 					insertFunc(item, el);
 				} else {
-                    const content = item.querySelector(".hero__content");
-                    if (content) {
-                        item.insertBefore(el, content);
-                    }
+					const content = item.querySelector(".hero__content");
+					if (content) {
+						item.insertBefore(el, content);
+					}
 				}
 			});
 		}
