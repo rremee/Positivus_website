@@ -1,0 +1,48 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.awards {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(256), 1fr));
+		gap: clamp(rem(12), 4vw, rem(40));
+	}
+
+	@media screen and (max-width: $tablet) {
+		.text-block {
+			flex-direction: column;
+			&__title {
+				text-wrap: wrap;
+			}
+			&__paragraph {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.item-awards {
+	background-color: $grayColor;
+	border-radius: rem(45);
+	padding: clamp(rem(40), 5vw, rem(58)) clamp(rem(18), 4vw, rem(30));
+	display: flex;
+	flex-direction: column;
+	&__picture {
+		width: rem(144);
+		align-self: center;
+		img {
+			object-fit: cover;
+		}
+		margin-bottom: clamp(rem(30), 6vw, rem(52));
+	}
+
+	&__title {
+		@include typography($weight: 700);
+		margin-bottom: rem(13);
+	}
+
+	&__text {
+		@include typography;
+	}
+}
