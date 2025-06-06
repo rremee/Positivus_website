@@ -1,0 +1,61 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.quote {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: rem(510);
+			background-color: $darkColor;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: -1;
+			border-radius: rem(45);
+		}
+		@media screen and (max-width: $laptop) {
+			flex-direction: column-reverse;
+			align-items: start;
+			&::before {
+				height: 100%;
+			}
+		}
+	}
+
+	&__picture {
+		align-self: center;
+		@media screen and (max-width: $tabletS) {
+			align-self: end;
+		}
+		svg {
+			width: clamp(rem(268), 50vw, rem(504));
+		}
+	}
+
+	&__content {
+		padding: clamp(rem(50), 8vw, rem(100)) clamp(rem(50), 4vw, rem(62)) rem(20) rem(38);
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(20), 5vw, rem(40));
+	}
+
+	&__text {
+		@include typography($weight: 500, $minFS: 36, $maxFS: 40, $color: $whiteColor);
+		@media screen and (max-width: $mobileM) {
+			font-size: rem(30);
+		}
+	}
+
+	&__author {
+		@include typography($minFS: 18, $maxFS: 20, $color: $grayColor);
+		@media screen and (max-width: $tabletS) {
+			display: none;
+		}
+	}
+}

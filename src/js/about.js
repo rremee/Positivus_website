@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		body.style.overflow = isActive ? "hidden" : "";
 	});
 	// Lottie
-	const lottieAnimations = [{ selector: ".hero__picture", path: "/src/animation/about/about-main.json" }];
+	const lottieAnimations = [
+		{ selector: ".hero__picture", path: "/src/animation/about/about-main.json" },
+		{ selector: ".quote__picture", path: "/src/animation/about/about-quote.json" },
+	];
 
 	const lottieSettings = {
 		renderer: "svg",
