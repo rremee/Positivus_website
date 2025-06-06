@@ -1,0 +1,44 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.join {
+	padding-bottom: clamp(rem(70), 10vw, rem(140));
+
+	&__wrapper {
+		background-color: $greenColor;
+		border-radius: rem(45);
+		padding: rem(50) clamp(rem(46), 12vw, rem(160)) rem(50) clamp(rem(46), 5vw, rem(52));
+		box-shadow: 0 5px 0 0 #191a23;
+		border: rem(1) solid $blackColor;
+		display: flex;
+		align-items: center;
+		gap: clamp(rem(40), 7vw, rem(80));
+		@media screen and (max-width: $tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(20), 6vw, rem(32));
+		@media screen and (max-width: $tabletS) {
+			text-align: center;
+			.button-dark {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+	&__text {
+		@include typography;
+	}
+
+	&__picture {
+		svg {
+			width: clamp(rem(246), 24vw, rem(332));
+		}
+	}
+}

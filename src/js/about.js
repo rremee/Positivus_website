@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const lottieAnimations = [
 		{ selector: ".hero__picture", path: "/src/animation/about/about-main.json" },
 		{ selector: ".quote__picture", path: "/src/animation/about/about-quote.json" },
+		{ selector: ".join__picture", path: "/src/animation/about/about-join.json" }
 	];
 
 	const lottieSettings = {
