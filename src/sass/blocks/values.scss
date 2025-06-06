@@ -1,0 +1,62 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.values {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(436), 1fr));
+		gap: rem(40);
+		@media screen and (max-width: $laptop) {
+			grid-template-columns: repeat(auto-fit, minmax(rem(330), 1fr));
+		}
+		@media screen and (max-width: $tabletS) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+.item-values {
+	border: rem(1) solid $blackColor;
+	border-radius: rem(45);
+	padding: clamp(rem(40), 4vw, rem(50));
+	display: flex;
+	align-items: center;
+	column-gap: clamp(rem(32), 4vw, rem(50));
+	row-gap: clamp(rem(18), 4vw, rem(32));
+	box-shadow: 0 5px 0 0 #191a23;
+	@media screen and (max-width: $laptop) {
+		flex-direction: column;
+	}
+	@media screen and (max-width: $tablet) {
+		&:nth-child(3) {
+			order: 4;
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(26), 6vw, rem(48));
+		align-self: start;
+	}
+
+	&__divider {
+		border: rem(1) solid $blackColor;
+		width: 100%;
+	}
+
+	&__text {
+		@include typography;
+	}
+
+	&__picture {
+		flex: 0 1 90%;
+		max-width: rem(328);
+
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+}
