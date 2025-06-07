@@ -43,19 +43,33 @@ export function initLogoSpinning() {
 }
 
 // Picture Relocate
-export function pictureRelocate(breakpointMedia, itemSelector, elemSelector, insertFunc) {
+export function pictureRelocate(breakpointMedia, itemSelector, elemSelector, onMatch, onUnmatch) {
 	const mq = window.matchMedia(breakpointMedia);
-	const items = Array.from(document.querySelectorAll(itemSelector));
+	const records = Array.from(document.querySelectorAll(itemSelector))
+		.map((item) => {
+			const el = item.querySelector(elemSelector);
+			if (!el) return null;
+			return {
+				item,
+				el,
+				originalParent: el.parentNode,
+				originalNextSibling: el.nextSibling,
+			};
+		})
+		.filter(Boolean);
 
 	function relocate() {
-		items.forEach((item) => {
-			const el = item.querySelector(elemSelector);
-			if (!el) return;
-
+		records.forEach(({ item, el, originalParent, originalNextSibling }) => {
 			if (mq.matches) {
-				insertFunc(item, el);
+				onMatch(item, el);
+			} else if (typeof onUnmatch === "function") {
+				onUnmatch(item, el);
 			} else {
-				item.appendChild(el);
+				if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
+					originalParent.insertBefore(el, originalNextSibling);
+				} else {
+					originalParent.appendChild(el);
+				}
 			}
 		});
 	}
