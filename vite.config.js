@@ -22,6 +22,10 @@ export default defineConfig({
 						pageTitle = "About Us";
 						pageScript = "about.js";
 						break;
+					case "services":
+						pageTitle = "Services";
+						pageScript = "services.js";
+						break;
 					default:
 						pageTitle = "Positivus";
 						pageScript = "home.js";
@@ -34,7 +38,8 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				main: resolve(__dirname, "index.html"),
-				about: resolve(__dirname, "about.html")
+				about: resolve(__dirname, "about.html"),
+				services: resolve(__dirname, "services.html")
 			},
 		},
 	},
