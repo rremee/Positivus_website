@@ -1,0 +1,53 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.work {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(22), 8vw, rem(40));
+	}
+	.text-block {
+		&__title {
+			text-wrap: wrap;
+		}
+	}
+}
+
+.item-work {
+	padding: clamp(rem(30), 5vw, rem(50)) clamp(rem(30), 9vw, rem(100)) clamp(rem(30), 5vw, rem(50))
+		clamp(rem(30), 6vw, rem(40));
+	background-color: $grayColor;
+	border-radius: rem(45);
+	display: flex;
+	align-items: center;
+	column-gap: clamp(rem(20), 6vw, rem(60));
+	@media screen and (max-width: $laptop) {
+		align-items: start;
+	}
+	&__number {
+		.icon-logo {
+			font-size: clamp(rem(46), 12vw, rem(140));
+			position: relative;
+		}
+		.item-work__num {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			@include typography($weight: 500, $minFS: 20, $maxFS: 60, $vw: 4vw, $color: $greenColor);
+			font-family: $fontFamily;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(20), 5vw, rem(36));
+	}
+
+	&__text {
+		@include typography;
+	}
+}
