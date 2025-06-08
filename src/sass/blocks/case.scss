@@ -24,7 +24,7 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: clamp(rem(10), 4vw, rem(20));
-		flex: 0 0 clamp(rem(200), 16vw, rem(286));
+		flex: 0 0 clamp(rem(200), 20vw, rem(286));
 		@media screen and (max-width: $laptop) {
 			background-color: $darkColor;
 			border-radius: rem(45);
@@ -34,6 +34,10 @@
 		@media screen and (max-width: $mobileL) {
 			flex: 0 0 rem(320);
 		}
+	}
+
+	&__title {
+		color: $whiteColor;
 	}
 
 	&__info {

@@ -1,4 +1,4 @@
-import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations } from "./common.js";
+import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations, initCaseSliding } from "./common.js";
 import "/src/sass/blocks/hero-services.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,4 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
 		const title = container.querySelector(".hero__title");
 		if (title) title.parentNode.insertBefore(picture, title.nextSibling);
 	});
+    initCaseSliding();
 });
