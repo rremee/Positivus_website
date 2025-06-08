@@ -46,6 +46,11 @@
 		span {
 			@include headingBack;
 		}
+		&--white {
+			span {
+				@include headingBack($BGColor: $whiteColor);
+			}
+		}
 	}
 
 	&__picture {

@@ -10,5 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		const title = container.querySelector(".hero__title");
 		if (title) title.parentNode.insertBefore(picture, title.nextSibling);
 	});
+
+    pictureRelocate("(max-width: 1199.98px)", ".item-services", ".item-services__picture", (item, picture) => {
+		const title = item.querySelector(".item-services__title");
+		if (title && picture) {
+			title.parentNode.insertBefore(picture, title.nextSibling);
+		}
+	});
+    
     initCaseSliding();
 });
