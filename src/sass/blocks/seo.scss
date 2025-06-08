@@ -1,0 +1,63 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+@use "../animation/animations.scss" as *;
+
+.seo {
+	&__wrapper {
+		background-color: $darkColor;
+		border-radius: rem(45);
+		padding: rem(40) clamp(rem(30), 9vw, rem(122)) rem(40) clamp(rem(30), 7vw, rem(64));
+		display: flex;
+		column-gap: clamp(rem(30), 5vw, rem(40));
+	}
+
+	&__content {
+		display: flex;
+		align-items: start;
+		gap: clamp(rem(22), 6vw, rem(54));
+		@media screen and (max-width: $tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(rem(22), 6vw, rem(54));
+	}
+
+	&__icon {
+		font-size: clamp(rem(22), 6vw, rem(36));
+		color: $greenColor;
+		animation: logoImgAnimation 10s linear infinite;
+		display: inline-flex;
+		align-self: start;
+		@media screen and (max-width: $mobileL) {
+			display: none;
+		}
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-wrap: nowrap;
+		span {
+			@include headingBack;
+		}
+	}
+
+	&__text {
+		@include typography($color: $whiteColor);
+	}
+
+	&__btn {
+		width: 100%;
+		max-width: 100%;
+		@media screen and (max-width: $tabletS) {
+			font-size: rem(18);
+			padding: rem(20) rem(20);
+		}
+	}
+}

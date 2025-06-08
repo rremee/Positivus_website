@@ -9,6 +9,14 @@
 		$colorHover: $whiteColor
 	);
 }
+.button-white {
+	@include button(
+		$color: $darkColor,
+		$bColor: $whiteColor,
+		$bColorHover: $greenColorHover,
+		$colorHover: $darkColorHover
+	);
+}
 .button-green {
 	@include button(
 		$bColor: $greenColor,
