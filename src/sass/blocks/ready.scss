@@ -1,0 +1,60 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.ready {
+	padding-bottom: clamp(rem(70), 10vw, rem(140));
+
+	&__wrapper {
+		border: rem(1) solid $darkColor;
+		border-radius: rem(45);
+		padding: clamp(rem(42), 5vw, rem(88)) clamp(rem(36), 5vw, rem(68));
+		display: flex;
+		align-items: center;
+		gap: clamp(rem(40), 4vw, rem(50));
+		box-shadow: 0 rem(5) 0 0 $darkColor;
+		@media screen and (max-width: $laptop) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(20), 6vw, rem(30));
+	}
+
+	&__divider {
+		width: 100%;
+		border: rem(1) solid $darkColor;
+	}
+
+	&__text {
+		@include typography;
+	}
+
+	&__prom {
+		@include typography($weight: 700);
+	}
+
+	&__btn {
+		max-width: clamp(rem(250), 50vw, rem(290));
+		@media screen and (max-width: $tabletS), screen and (min-width: $laptop) {
+			width: 100%;
+			max-width: 100%;
+		}
+		@media screen and (max-width: $tabletS) {
+			font-size: rem(18);
+			padding: rem(20) rem(20);
+		}
+	}
+
+	&__picture {
+		svg {
+			width: clamp(rem(220), 48vw, rem(452));
+		}
+		@media screen and (max-width: $tabletS) {
+			align-self: center;
+		}
+	}
+}
