@@ -57,6 +57,15 @@
 		$arrowColorHover: $darkColorHover
 	);
 }
+.button-link-gbb {
+	@include buttonLink(
+		$textColor: $blackColor,
+		$bgColor: $greenColor,
+		$arrowColor: $blackColor,
+		$bgColorHover: $greenColorHover,
+		$arrowColorHover: $darkColorHover
+	);
+}
 .link-arrow-green {
 	@include buttonLinkArrow;
 }

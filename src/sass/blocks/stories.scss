@@ -1,0 +1,75 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.stories {
+	&__wrapper {
+		border: rem(1) solid $darkColor;
+		border-radius: rem(45);
+		padding: clamp(rem(40), 4vw, rem(68)) clamp(rem(30), 4vw, rem(56));
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(336), 1fr));
+		box-shadow: 0 rem(5) 0 0 $darkColor;
+		gap: rem(0);
+		@media screen and (max-width: rem(801.98)) {
+			border: none;
+			border-radius: unset;
+			padding: unset;
+			box-shadow: unset;
+			gap: rem(30);
+			grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+		}
+		@media screen and (max-width: $tabletS) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.text-block {
+		&__title {
+			text-wrap: wrap;
+		}
+	}
+}
+
+.item-stories {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(28);
+	padding: rem(34);
+	&:nth-child(1),
+	&:nth-child(2),
+	&:nth-child(4),
+	&:nth-child(5) {
+		border-right: rem(1) solid $darkColor;
+	}
+	&:nth-child(1),
+	&:nth-child(2),
+	&:nth-child(3) {
+		border-bottom: rem(1) solid $darkColor;
+	}
+	@media screen and (max-width: rem(1183.98)) {
+		&:nth-child(2),
+		&:nth-child(4) {
+			border-right: none;
+		}
+		&:nth-child(3) {
+			border-right: rem(1) solid $darkColor;
+		}
+		&:nth-child(4) {
+			border-bottom: rem(1) solid $darkColor;
+		}
+	}
+	@media screen and (max-width: rem(801.98)) {
+		border: rem(1) solid $darkColor;
+		border-radius: rem(45);
+		box-shadow: 0 rem(5) 0 0 $darkColor;
+		&:nth-child(2),
+		&:nth-child(4) {
+			border-right: rem(1) solid $darkColor;
+		}
+	}
+
+	&__text {
+		@include typography;
+	}
+}
