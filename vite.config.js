@@ -30,6 +30,10 @@ export default defineConfig({
 						pageTitle = "Use Cases";
 						pageScript = "cases.js";
 						break;
+					case "price":
+						pageTitle = "Pricing";
+						pageScript = "price.js";
+						break;
 					default:
 						pageTitle = "Positivus";
 						pageScript = "home.js";
@@ -44,7 +48,8 @@ export default defineConfig({
 				main: resolve(__dirname, "index.html"),
 				about: resolve(__dirname, "about.html"),
 				services: resolve(__dirname, "services.html"),
-				cases: resolve(__dirname, "cases.html")
+				cases: resolve(__dirname, "cases.html"),
+				price: resolve(__dirname, "price.html")
 			},
 		},
 	},
