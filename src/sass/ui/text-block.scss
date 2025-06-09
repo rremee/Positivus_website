@@ -11,6 +11,9 @@
 	line-height: 1.4;
 }
 
+.title-h2 {
+	@include typography($weight: 500, $minFS: 36, $maxFS: 40);
+}
 .title-h3 {
 	@include typography($weight: 500, $minFS: 26, $maxFS: 30);
 }

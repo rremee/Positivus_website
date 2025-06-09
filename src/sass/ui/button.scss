@@ -48,6 +48,15 @@
 		$arrowColorHover: $darkColorHover
 	);
 }
+.button-link-gbg {
+	@include buttonLink(
+		$textColor: $greenColor,
+		$bgColor: $greenColor,
+		$arrowColor: $blackColor,
+		$bgColorHover: $greenColorHover,
+		$arrowColorHover: $darkColorHover
+	);
+}
 .link-arrow-green {
 	@include buttonLinkArrow;
 }

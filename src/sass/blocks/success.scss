@@ -1,0 +1,68 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.success {
+	&__wrapper {
+		padding: clamp(rem(44), 6vw, rem(70));
+		background-color: $darkColor;
+		border-radius: rem(45);
+		display: flex;
+		column-gap: clamp(rem(36), 7vw, rem(130));
+		row-gap: clamp(rem(36), 4vw, rem(52));
+		@media screen and (max-width: $laptop) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		color: $whiteColor;
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(28), 6vw, rem(58));
+		@media screen and (max-width: $laptop) {
+			display: contents;
+		}
+	}
+
+	&__title {
+		color: $darkColor;
+		@include headingBack;
+	}
+
+	&__text {
+		@include typography;
+	}
+
+	&__btn {
+		@media screen and (max-width: $laptop) {
+			order: 2;
+		}
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(152), 1fr));
+		gap: clamp(rem(18), 5vw, rem(28));
+		flex: 0 0 42%;
+	}
+
+	&__item {
+		padding: clamp(rem(30), 5vw, rem(40));
+		background-color: $whiteColor;
+		border-radius: rem(20);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: rem(16);
+	}
+
+	&__percent {
+		@include typography($weight: 500, $minFS: 36, $maxFS: 40);
+	}
+
+	&__descr {
+		@include typography;
+		text-align: center;
+	}
+}
