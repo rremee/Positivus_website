@@ -1,0 +1,115 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.plans {
+	&__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: clamp(rem(22), 5vw, rem(30));
+		margin-bottom: clamp(rem(60), 8vw, rem(104));
+	}
+
+	&__title {
+		@include typography($weight: 500, $minFS: 44, $maxFS: 90, $vw: 10vw);
+	}
+
+	&__text {
+		@include typography($maxFS: 20, $minFS: 18);
+		line-height: 1.4;
+		max-width: rem(482);
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(310), 1fr));
+		gap: clamp(rem(32), 3vw, rem(40));
+		@media screen and (max-width: $tabletS) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.item-plans {
+	border: rem(1) solid $darkColor;
+	border-radius: rem(30);
+	padding: rem(40) clamp(rem(16), 4vw, rem(34));
+	box-shadow: 0 rem(5) 0 0 $darkColor;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__popular {
+		font-size: rem(16);
+		font-weight: 600;
+		@include headingBack;
+		color: $darkColor;
+		align-self: center;
+		padding: rem(5) rem(11);
+		border-radius: rem(20);
+	}
+
+	&__info {
+		display: flex;
+		column-gap: rem(6);
+		align-items: flex-end;
+		margin-top: rem(36);
+		margin-bottom: rem(40);
+	}
+
+	&__price {
+		font-size: rem(54);
+		font-weight: 700;
+		line-height: 0.8;
+	}
+
+	&__month {
+		@include typography;
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(20);
+		a {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	&__divider {
+		border: rem(1) solid $darkColor;
+		width: 100%;
+		margin: rem(38) 0 rem(38) 0;
+	}
+
+	&__item {
+		@include typography;
+		display: flex;
+		align-items: center;
+		column-gap: rem(14);
+		&::before {
+			content: "";
+			background: url("/src/icons/check-icon.svg") no-repeat center/ cover;
+			flex-shrink: 0;
+			width: rem(24);
+			height: rem(24);
+			align-self: start;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(22);
+		}
+	}
+	&--dark {
+		color: $whiteColor;
+		background-color: $darkColor;
+		.item-plans__divider {
+			border-color: $whiteColor;
+		}
+		.button-outline {
+			border-color: $whiteColor;
+			color: $whiteColor;
+		}
+	}
+}
