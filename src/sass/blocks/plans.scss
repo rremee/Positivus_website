@@ -43,11 +43,11 @@
 	&__popular {
 		font-size: rem(16);
 		font-weight: 600;
-		@include headingBack;
 		color: $darkColor;
 		align-self: center;
 		padding: rem(5) rem(11);
 		border-radius: rem(20);
+		@include headingBack;
 	}
 
 	&__info {

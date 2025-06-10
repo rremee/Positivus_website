@@ -97,8 +97,8 @@
 
 	&__title {
 		display: inline-block;
-		@include headingBack;
 		margin-bottom: rem(27);
+		@include headingBack;
 	}
 
 	&__contact {

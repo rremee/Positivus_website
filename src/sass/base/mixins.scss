@@ -129,12 +129,14 @@
 }
 
 @mixin headingBack($BGColor: $greenColor) {
-	background-color: $BGColor;
-	padding: 0 rem(7);
-	border-radius: rem(7);
-	box-decoration-break: clone;
-	display: inline-block;
-	align-self: flex-start;
+	& {
+		background-color: $BGColor;
+		padding: 0 rem(7);
+		border-radius: rem(7);
+		box-decoration-break: clone;
+		display: inline-block;
+		align-self: flex-start;
+	}
 }
 
 @mixin hoverLink($BGColor: $greenColor) {
