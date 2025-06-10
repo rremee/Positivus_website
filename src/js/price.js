@@ -1,6 +1,7 @@
-import { initBurger, initLogoSpinning } from "./common.js";
+import { initBurger, initLogoSpinning, initProcessAccordion } from "./common.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	initBurger();
 	initLogoSpinning();
+	initProcessAccordion();
 });

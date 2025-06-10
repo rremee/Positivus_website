@@ -2,6 +2,39 @@
 @use "../libs/pxtorem.scss" as *;
 @use "../base/mixins.scss" as *;
 
+.process {
+	&--last {
+		padding-bottom: clamp(rem(70), 10vw, rem(140));
+	}
+	&__title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-wrap: nowrap;
+		margin-bottom: clamp(rem(40), 8vw, rem(80));
+		span {
+			@media screen and (min-width: $mobileL) {
+				&:nth-child(3) {
+					display: none;
+				}
+			}
+			@media screen and (max-width: $mobileL) {
+				&:nth-child(1),
+				&:nth-child(2) {
+					display: none;
+				}
+			}
+			@include headingBack;
+			@media screen and (max-width: $tabletS) {
+				align-self: center;
+			}
+		}
+		@media screen and (max-width: $tabletS) {
+			text-align: center;
+		}
+	}
+}
+
 .item-process {
 	background-color: $grayColor;
 	border: rem(1) solid $darkColor;
