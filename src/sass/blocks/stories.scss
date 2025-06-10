@@ -3,6 +3,9 @@
 @use "../base/mixins.scss" as *;
 
 .stories {
+	&--last {
+		padding-bottom: clamp(rem(70), 10vw, rem(140));
+	}
 	&__wrapper {
 		border: rem(1) solid $darkColor;
 		border-radius: rem(45);

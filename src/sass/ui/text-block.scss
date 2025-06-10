@@ -33,8 +33,10 @@
 	&__title {
 		@include typography($weight: 500, $minFS: 36, $maxFS: 40);
 		text-wrap: nowrap;
-		align-self: center;
 		@include headingBack;
+		& {
+			align-self: center;
+		}
 	}
 
 	&__paragraph {
