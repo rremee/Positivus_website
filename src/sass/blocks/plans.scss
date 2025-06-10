@@ -45,9 +45,11 @@
 		font-weight: 600;
 		color: $darkColor;
 		align-self: center;
-		padding: rem(5) rem(11);
 		border-radius: rem(20);
 		@include headingBack;
+		& {
+			padding: rem(5) rem(11);
+		}
 	}
 
 	&__info {
