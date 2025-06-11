@@ -29,11 +29,11 @@
 		row-gap: clamp(rem(28), 4vw, rem(38));
 	}
 
-    &__label {
-        @include typography($color: $disableColorButtonText);
-        @include headingBack($BGColor: $lightGrayColor);
-        & {
-            padding: rem(5) rem(11);
-        }
-    }
+	&__label {
+		@include typography($color: $disableColorButtonText);
+		@include headingBack($BGColor: $lightGrayColor);
+		& {
+			padding: rem(5) rem(11);
+		}
+	}
 }

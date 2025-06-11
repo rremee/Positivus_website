@@ -5,7 +5,7 @@ import {
 	initLottieAnimations,
 	initTestimonialsSwiper,
 } from "./common.js";
-import "/src/sass/blocks/hero-cases.scss";
+import "/src/sass/blocks/hero-common.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
 	initBurger();

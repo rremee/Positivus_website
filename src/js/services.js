@@ -1,5 +1,5 @@
 import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations, initCaseSliding } from "./common.js";
-import "/src/sass/blocks/hero-services.scss";
+import "/src/sass/blocks/hero-common.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
 	initBurger();
