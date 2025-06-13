@@ -1,4 +1,4 @@
-import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations, initPopup } from "./common.js";
+import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations, initPopup, initScrollToTop } from "./common.js";
 import "/src/sass/blocks/hero-common.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,4 +15,5 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (title) title.parentNode.insertBefore(picture, title.nextSibling);
 	});
 	initPopup();
+	initScrollToTop();
 });

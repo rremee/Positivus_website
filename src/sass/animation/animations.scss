@@ -1,17 +1,28 @@
 @keyframes logoImgAnimation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes circleScaling {
-    0%, 100% {
-        transform: scale(1) translateY(0);
-    }
-    50% {
-        transform: scale(.78) translateY(-30px);
-    }
+	0%,
+	100% {
+		transform: scale(1) translateY(0);
+	}
+	50% {
+		transform: scale(0.78) translateY(-30px);
+	}
+}
+
+@keyframes scrollTopScaling {
+	0%,
+	100% {
+		transform: scale(1) translateY(0);
+	}
+	50% {
+		transform: scale(0.86) translateY(6px);
+	}
 }

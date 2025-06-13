@@ -7,7 +7,8 @@ import {
 	initProcessAccordion,
 	initTestimonialsSwiper,
 	initContactFormTabs,
-	initPopup
+	initPopup,
+	initScrollToTop
 } from "./common.js";
 
 import "/src/sass/blocks/hero-home.scss";
@@ -44,4 +45,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	initTestimonialsSwiper();
 	initContactFormTabs();
 	initPopup();
+	initScrollToTop();
 });

@@ -4,7 +4,8 @@ import {
 	pictureRelocate,
 	initLottieAnimations,
 	initTestimonialsSwiper,
-	initPopup
+	initPopup,
+	initScrollToTop
 } from "./common.js";
 import "/src/sass/blocks/hero-common.scss";
 
@@ -26,4 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 	initTestimonialsSwiper();
 	initPopup();
+	initScrollToTop();
 });

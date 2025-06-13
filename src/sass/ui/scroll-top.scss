@@ -1,0 +1,46 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.scroll-top {
+	position: fixed;
+	bottom: rem(50);
+	right: rem(50);
+	width: rem(46);
+	height: rem(46);
+	border-radius: 100%;
+	background-color: $greenColor;
+	color: $darkColor;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: 0.4s all;
+	animation: scrollTopScaling 2s linear infinite;
+	opacity: 0;
+	visibility: hidden;
+    z-index: 500;
+	span {
+		transform: rotate(-58deg);
+		transition: 0.4s transform;
+		font-size: rem(16);
+	}
+    @media screen and (max-width: $tablet) {
+        bottom: rem(14);
+        right: rem(14);
+    }
+	@media screen and (min-width: $tablet) {
+		&:hover {
+			background-color: $greenColorHover;
+			color: $darkColorHover;
+			span {
+				transform: rotate(calc(-58deg + 360deg));
+			}
+		}
+	}
+	&--active {
+		opacity: 1;
+		visibility: visible;
+	}
+}

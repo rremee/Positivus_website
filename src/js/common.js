@@ -366,3 +366,25 @@ export function initPopup() {
 		});
 	});
 }
+
+export function initScrollToTop(threshold = 1500) {
+	const btn = document.getElementById("scroll-top");
+	if (!btn) return;
+
+	function toggleVisibility() {
+		if (window.pageYOffset > threshold) {
+			btn.classList.add("scroll-top--active");
+		} else {
+			btn.classList.remove("scroll-top--active");
+		}
+	}
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+	window.addEventListener("scroll", toggleVisibility);
+	btn.addEventListener("click", scrollToTop);
+
+	toggleVisibility();
+}
