@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	initLottieAnimations([
-		{ selector: ".hero__picture", path: "/src/animation/hero/hero-img.json" },
-		{ selector: ".cta__picture", path: "/src/animation/cta/cta.json" },
-		{ selector: ".contact__picture", path: "/src/animation/contact/contact.json" },
+		{ selector: ".hero__picture", path: "/animation/hero/hero-img.json" },
+		{ selector: ".cta__picture", path: "/animation/cta/cta.json" },
+		{ selector: ".contact__picture", path: "/animation/contact/contact.json" },
 	]);
 
 	initCaseSliding();

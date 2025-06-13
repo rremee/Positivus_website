@@ -4,7 +4,7 @@ import "/src/sass/blocks/hero-common.scss";
 document.addEventListener("DOMContentLoaded", () => {
 	initBurger();
 	initLogoSpinning();
-	initLottieAnimations([{ selector: ".hero__picture", path: "/src/animation/hero/hero-img.json" }]);
+	initLottieAnimations([{ selector: ".hero__picture", path: "/animation/hero/hero-img.json" }]);
 
 	pictureRelocate("(max-width: 1023.98px)", ".hero__wrapper", ".hero__picture", (container, picture) => {
 		const title = container.querySelector(".hero__title");

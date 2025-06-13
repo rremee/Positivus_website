@@ -1,7 +1,8 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "/src/sass/style.scss";
+import "./lottie.js";
+import "../sass/style.scss";
 
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";

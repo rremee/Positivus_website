@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	initBurger();
 	initLogoSpinning();
 	initLottieAnimations([
-		{ selector: ".hero__picture", path: "/src/animation/services/services-main.json" },
-		{ selector: ".ready__picture", path: "/src/animation/services/services-ready.json" },
+		{ selector: ".hero__picture", path: "/animation/services/services-main.json" },
+		{ selector: ".ready__picture", path: "/animation/services/services-ready.json" },
 	]);
 
 	pictureRelocate("(max-width: 767.98px)", ".hero__wrapper", ".hero__picture", (container, picture) => {

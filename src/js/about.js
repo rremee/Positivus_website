@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	initBurger();
 	initLogoSpinning();
 	initLottieAnimations([
-		{ selector: ".hero__picture", path: "/src/animation/about/about-main.json" },
-		{ selector: ".quote__picture", path: "/src/animation/about/about-quote.json" },
-		{ selector: ".join__picture", path: "/src/animation/about/about-join.json" },
+		{ selector: ".hero__picture", path: "/animation/about/about-main.json" },
+		{ selector: ".quote__picture", path: "/animation/about/about-quote.json" },
+		{ selector: ".join__picture", path: "/animation/about/about-join.json" },
 	]);
 
 	pictureRelocate("(max-width: 767.98px)", ".hero__wrapper", ".hero__picture", (container, picture) => {

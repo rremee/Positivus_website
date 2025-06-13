@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	initBurger();
 	initLogoSpinning();
 	initLottieAnimations([
-		{ selector: ".hero__picture", path: "/src/animation/cases/cases-main.json" },
-		{ selector: ".cta__picture", path: "/src/animation/cases/cases-cta.json" },
+		{ selector: ".hero__picture", path: "/animation/cases/cases-main.json" },
+		{ selector: ".cta__picture", path: "/animation/cases/cases-cta.json" },
 	]);
 
 	pictureRelocate("(max-width: 767.98px)", ".hero__wrapper", ".hero__picture", (container, picture) => {
