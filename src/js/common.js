@@ -299,7 +299,9 @@ export function initPopup() {
 	const overlay = document.createElement("div");
 	overlay.classList.add("popup-overlay");
 
-	let savedBodyPaddingRight = "";
+	function preventScroll(e) {
+		e.preventDefault();
+	}
 
 	function openPopup(popupId) {
 		const popup = document.querySelector(`.popup[data-popup-id="${popupId}"]`);
@@ -307,18 +309,16 @@ export function initPopup() {
 
 		document.body.append(overlay);
 
-		const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-		savedBodyPaddingRight = document.body.style.paddingRight || "";
-		document.body.style.paddingRight = `${scrollBarWidth}px`;
-		document.body.style.overflow = "hidden";
+		document.addEventListener("wheel", preventScroll, { passive: false });
+		document.addEventListener("touchmove", preventScroll, { passive: false });
 
 		popup.classList.add("popup--active");
 	}
 
 	function closePopup() {
 		overlay.remove();
-		document.body.style.overflow = "";
-		document.body.style.paddingRight = savedBodyPaddingRight;
+		document.removeEventListener("wheel", preventScroll, { passive: false });
+		document.removeEventListener("touchmove", preventScroll, { passive: false });
 
 		popups.forEach((p) => p.classList.remove("popup--active"));
 	}
@@ -344,5 +344,25 @@ export function initPopup() {
 		if (e.key === "Escape") {
 			closePopup();
 		}
+	});
+
+	const forms = [
+		document.getElementById("form-sayHi"),
+		document.getElementById("form-getQuote"),
+		document.getElementById("footer-form"),
+	].filter(Boolean);
+
+	forms.forEach((form) => {
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+
+			if (!form.checkValidity()) {
+				form.reportValidity();
+				return;
+			}
+
+			openPopup("error");
+			form.reset();
+		});
 	});
 }
