@@ -1,4 +1,4 @@
-import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations, initCaseSliding } from "./common.js";
+import { initBurger, initLogoSpinning, pictureRelocate, initLottieAnimations, initCaseSliding, initPopup } from "./common.js";
 import "/src/sass/blocks/hero-common.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,4 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	initCaseSliding();
+	initPopup();
 });

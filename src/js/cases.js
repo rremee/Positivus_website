@@ -4,6 +4,7 @@ import {
 	pictureRelocate,
 	initLottieAnimations,
 	initTestimonialsSwiper,
+	initPopup
 } from "./common.js";
 import "/src/sass/blocks/hero-common.scss";
 
@@ -24,4 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (title) title.parentNode.insertBefore(picture, title.nextSibling);
 	});
 	initTestimonialsSwiper();
+	initPopup();
 });

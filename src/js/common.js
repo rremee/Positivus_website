@@ -290,3 +290,59 @@ export function initContactFormTabs() {
 		});
 	});
 }
+
+// Popup
+export function initPopup() {
+	const popups = document.querySelectorAll(".popup[data-popup-id]");
+	if (!popups.length) return;
+
+	const overlay = document.createElement("div");
+	overlay.classList.add("popup-overlay");
+
+	let savedBodyPaddingRight = "";
+
+	function openPopup(popupId) {
+		const popup = document.querySelector(`.popup[data-popup-id="${popupId}"]`);
+		if (!popup) return;
+
+		document.body.append(overlay);
+
+		const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+		savedBodyPaddingRight = document.body.style.paddingRight || "";
+		document.body.style.paddingRight = `${scrollBarWidth}px`;
+		document.body.style.overflow = "hidden";
+
+		popup.classList.add("popup--active");
+	}
+
+	function closePopup() {
+		overlay.remove();
+		document.body.style.overflow = "";
+		document.body.style.paddingRight = savedBodyPaddingRight;
+
+		popups.forEach((p) => p.classList.remove("popup--active"));
+	}
+
+	document.querySelectorAll("[data-popup-target]").forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			e.preventDefault();
+			const target = btn.getAttribute("data-popup-target");
+			openPopup(target);
+		});
+	});
+
+	overlay.addEventListener("click", closePopup);
+
+	document.querySelectorAll(".js-popup-close").forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			e.preventDefault();
+			closePopup();
+		});
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			closePopup();
+		}
+	});
+}

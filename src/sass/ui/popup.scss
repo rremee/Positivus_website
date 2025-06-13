@@ -1,0 +1,51 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: clamp(rem(288), 60vw, rem(584));
+	height: auto;
+	transform: translate(-50%, -50%) scale(0.1) rotate(-60deg);
+	border: 1px solid #191a23;
+	border-radius: 45px;
+	box-shadow: 0 5px 0 0 #191a23;
+	background: #fff;
+	padding: clamp(rem(40), 5vw, rem(70)) clamp(rem(20), 4vw, rem(50));
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: clamp(rem(18), 5vw, rem(30));
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s all;
+	z-index: 2000;
+	&__title {
+		@include typography($weight: 500, $minFS: 28, $maxFS: 40);
+	}
+
+	&__text {
+		@include typography;
+	}
+
+	&--active {
+		top: 50%;
+		visibility: visible;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1) rotate(0deg);
+	}
+}
+
+.popup-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
